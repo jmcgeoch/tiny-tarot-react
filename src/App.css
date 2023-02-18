@@ -25,13 +25,9 @@
   text-decoration: none;
 }
 
-a:active {
+a.navLink.active {
   text-decoration: underline;
   text-underline-offset: 0.5em;
-}
-
-.Link {
-  color: blue;
 }
 
 .title {

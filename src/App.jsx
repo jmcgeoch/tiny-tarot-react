@@ -2,17 +2,16 @@ import './App.css';
 import Journal from './Journal';
 import Shuffle from './Shuffle';
 import Search from './Search';
-import { useState } from 'react';
-import { BrowserRouter, Link, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Outlet, Route, Routes } from 'react-router-dom';
 
 function Header() {
 
   return (
     <div className='headerNav'>
       <a className='title'>Tiny Tarot</a>
-      <Link to='/' className='navLink'>Shuffle</Link>
-      <Link to='journal' className='navLink'>Journal</Link>
-      <Link to='search' className='navLink'>Search</Link>
+      <NavLink to='/' className='navLink'>Shuffle</NavLink>
+      <NavLink to='journal' className='navLink'>Journal</NavLink>
+      <NavLink to='search' className='navLink'>Search</NavLink>
     </div>
   );
 }
