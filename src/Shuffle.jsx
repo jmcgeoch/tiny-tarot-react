@@ -28,6 +28,7 @@ export default function Shuffle() {
         return newCards;
     }
 
+    // fix this section
     function changeNumberOfCards(clicks) {
         console.log('clicks: ' + clicks, 'number cards: ' + numberOfCards);
         let newSpreadNumber = clicks + numberOfCards;
