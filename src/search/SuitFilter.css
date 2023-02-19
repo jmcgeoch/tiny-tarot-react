@@ -1,0 +1,14 @@
+.iconNavigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: auto;
+    width: 100px;
+}
+
+.icon {
+    width: 5vw;
+    outline: none;
+    padding-bottom: 20px;
+}

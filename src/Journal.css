@@ -1,12 +1,7 @@
-.chevron {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 .App-body {
     display: flex;
     flex-direction: row;
-    align-items: center !important;
+    align-items: center;
     justify-content: space-evenly;
     font-size: calc(2vmin);
     color: purple;
@@ -15,8 +10,4 @@
     border-radius: 25px;
     height: 80vh;
     background-color: lavender;
-}
-
-.cardContainer {
-    width: 33%;
 }

@@ -1,14 +1,18 @@
 import './Card.css';
-import cardDescriptions from './tarot_library.json';
+import { cardBack } from './resources/rootIndex';
+import CardImages from './resources/cards/cardImageIndex';
 
-export default function Card({ cardNumber, flipped }) {
-    let keywords = cardDescriptions[cardNumber].keywords.join(", ");
+export default function Card({ cardProfile, flipped }) {
+    let name = cardProfile.name;
+    let imageName = cardProfile.img;
+    let image = CardImages[imageName];
+    let keywords = cardProfile.keywords.join(", ");
 
-    if(flipped) {
+    if (flipped) {
         return (
             <div className="Card">
-                <h1>{cardDescriptions[cardNumber].name}</h1>
-                <img src={require('./resources/cards/' + cardDescriptions[cardNumber].img)} />
+                <h1>{name}</h1>
+                <img src={image} />
                 <p><b>Keywords:</b> {keywords}</p>
             </div>
         )
@@ -16,7 +20,7 @@ export default function Card({ cardNumber, flipped }) {
         return (
             <div className="Card">
                 <h1></h1>
-                <img src={require('./resources/card_back.jpg')} />
+                <img src={cardBack} />
                 <p></p>
             </div>
         )
