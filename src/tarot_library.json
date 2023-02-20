@@ -41,6 +41,7 @@
     "hebrew": "Aleph/Ox/1",
     "numerology": "0 (off the scale; pure potential)",
     "elemental": "Air",
+    "astrology": "Uranus",
     "mythic": "Adam before the fall. Christ as a wandering holy madman. Deity wrapped in human flesh. The Holy Spirit.",
     "questions": [
       "What would I do if I felt free to take a leap?",
@@ -84,7 +85,8 @@
     "archetype": "The Ego/The Self",
     "hebrew": "Beth/House/2",
     "numerology": "1 (origins, unity, seeds)",
-    "elemental": "The Sun/Mercury",
+    "elemental": "Air",
+    "astrology": "Mercury",
     "mythic": "Thoth, the Egyptian god of wisdom, known to the Greeks as Hermes and to the Romans as Mercury. Christ working miracles. Brahma, the Creator.",
     "questions": [
       "What am I empowered to do?",
@@ -130,7 +132,8 @@
     "archetype": "The Virgin/The Maiden",
     "hebrew": "Gimel/Camel/3",
     "numerology": "2 (division, debate, duality)",
-    "elemental": "The Moon",
+    "elemental": "Water",
+    "astrology": "The Moon",
     "mythic": "The feminine aspect of divinity, particularity when expressed through virginity, as with the Virgin Mary or Isis.",
     "questions": [
       "What might a rebel against tradition do?",
@@ -178,7 +181,8 @@
     "archetype": "The Mother",
     "hebrew": "Daleth/Door/4",
     "numerology": "3 (expression, productivity, output)",
-    "elemental": "Venus",
+    "astrology": "Venus",
+    "elemental": "Earth",
     "mythic": "Gaia, Mother Earth, Ishtar, Demeter. Mature, reproductive female divinity in every form. Also Aphrodite and Turan. ",
     "questions": [
       "What would a concerned and capable mother do?",
@@ -223,7 +227,8 @@
     "archetype": "The Father",
     "hebrew": "He[as]/Window/5, or in some decks, Tzaddi/Fish hook/90",
     "numerology": "4 (stability, equality, persistence)",
-    "elemental": "Mars/Aries",
+    "astrology": "Aries",
+    "elemental": "Fire",
     "mythic": "Masculine gods, including the Hebrew God, the Christian God, Allah, and Zeus. Patriarchs (Abraham) and lawgivers (Moses). Vishnu, the Preserver.",
     "questions": [
       "How does the issue of control or regulation impact this situation?",
@@ -270,7 +275,8 @@
     "archetype": "The Guardian/The Church/Faith",
     "hebrew": "Vau/Nail or Spike/6",
     "numerology": "5 (instability, resistance, confrontation, evolution)",
-    "elemental": "Taurus/Earth",
+    "astrology": "Taurus",
+    "elemental": "Earth",
     "mythic": "The Christ, the Apostle Peter, Buddha, Mohammed. Popes, priests, and intercessors of every faith and tradition",
     "questions": [
       "What role might tradition or religion play in this situation?",
@@ -315,7 +321,8 @@
     "archetype": "The Lover/Sexual Awakening",
     "hebrew": "Zain/Sword/7",
     "numerology": "6 (cooperation, collaboration, interaction)",
-    "elemental": "Gemini",
+    "astrology": "Gemini",
+    "elemental": "Air",
     "mythic": "Obviously, Adam and Eve, who are depicted in RWS-influenced decks. Also Venus and Cupid, Aphrodite and Eros.",
     "questions": [
       "What guides my choices?",
@@ -359,7 +366,8 @@
     "archetype": "The Victorious Hero",
     "hebrew": "Cheth/Fence/8",
     "numerology": "7 (imagination, inner work, psychology)",
-    "elemental": "Cancer",
+    "astrology": "Cancer",
+    "elemental": "Water",
     "mythic": "Odysseus. Jason. The search for the Holy Grail. Christ's triumphal entry into Jerusalem.",
     "questions": [
       "To what extent have I arrived? What will my next challenge be?",
@@ -402,7 +410,8 @@
     "archetype": "The Law",
     "hebrew": "Lamed/Outstretched Arms/30 or Theth/Snake/9",
     "numerology": "8 (movement, work) or 11 = 1 + 1 = 2 (debate, duality)",
-    "elemental": "Libra or Leo",
+    "astrology": "Leo",
+    "elemental": "Fire",
     "mythic": "Themis or Justitia. Ma'at. Solomon dividing a baby. The Sword of Damocles. The giving of the Ten Commandments.",
     "questions": [
       "To what extent is your life (or work) balanced?",
@@ -446,7 +455,8 @@
     "archetype": "The Holy Man",
     "hebrew": "Yod/Hand/10",
     "numerology": "9 (fullness, readiness, ripeness)",
-    "elemental": "Virgo",
+    "astrology": "Virgo",
+    "elemental": "Earth",
     "mythic": "The Christ, while fasting 40 days in the wilderness. Chronos, the god of time. Father Time. Hermes.",
     "questions": [
       "What would happen if I simply withdrew and took no action?",
@@ -491,7 +501,8 @@
     "archetype": "The Fates/Destiny",
     "hebrew": "Koph/Palm/20",
     "numerology": "10 (finality, completion) and 10 = 1 + 0 = 1 (seed, opportunity)",
-    "elemental": "Jupiter",
+    "astrology": "Jupiter",
+    "elemental": "Fire",
     "mythic": "The God in the Machine. Deus ex Machina. Clotho, Lachesis, and Atropos. Fortuna.",
     "questions": [
       "How does this challenge fit into a larger pattern?",
@@ -536,7 +547,8 @@
     "archetype": "The Id",
     "hebrew": "Theth/Snake/9 or Lamed/Outstretched Arms/30",
     "numerology": "11 = 1 + 1 = 2 (debate, duality) or 8 (movement, outer work)",
-    "elemental": "Leo or Libra",
+    "astrology": "Libra",
+    "elemental": "Air",
     "mythic": "Samson. Hercules. Daniel in the lion's den. The sinless Christ.",
     "questions": [
       "How can I enhance my self-discipline?",
@@ -581,6 +593,7 @@
     "archetype": "The Traitor",
     "hebrew": "Mem/Water/40",
     "numerology": "12 = 1 + 2 = 3 (expression, productivity, output)",
+    "astrology": "Neptune",
     "elemental": "Water",
     "mythic": "The Crucified Christ. Isaac as a sacrifice. Prometheus bound. Jonah and the whale. Lazarus. Any hanged or sacrificed god. Judas.",
     "questions": [
@@ -626,7 +639,8 @@
     "archetype": "Death",
     "hebrew": "Nun/Fish/50",
     "numerology": "13 = 1 + 3 = 4 (stability, persistence)",
-    "elemental": "Scorpio",
+    "astrology": "Scorpio",
+    "elemental": "Water",
     "mythic": "Christ in the tomb. Hades. Hypnos. Thanatos. Stories of journeys into the underworld.",
     "questions": [
       "What needs to end?",
@@ -673,7 +687,8 @@
     "archetype": "The Mediator",
     "hebrew": "Samekh/Foundation/60",
     "numerology": "14 = 1 + 4 = 5 (catalyst, instability, confrontation)",
-    "elemental": "Sagittarius",
+    "astrology": "Sagittarius",
+    "elemental": "Fire",
     "mythic": "The angel seen here may be the goddess Iris. By extension, priests, priesthoods, or the transfigured Christ.",
     "questions": [
       "How can I avoid extremes?",
@@ -719,7 +734,8 @@
     "archetype": "The Shadow, The Other",
     "hebrew": "Ayin/Eye/70",
     "numerology": "15 = 1 + 5 = 6 (adjustment, collaboration)",
-    "elemental": "Capricorn",
+    "astrology": "Capricorn",
+    "elemental": "Earth",
     "mythic": "The Biblical Satan, certainly. Fallen angels, including Lucifer. Bacchus and Pan. Tempters and serpents of every stripe.",
     "questions": [
       "What enslaves me? How can I set myself free?",
@@ -766,7 +782,8 @@
     "archetype": "The Shattered Ego",
     "hebrew": "Pe[as]/Open Mouth/80",
     "numerology": "16 = 1 + 6 = 7 (psychology, imagination, inner work)",
-    "elemental": "Mars",
+    "astrology": "Mars",
+    "elemental": "Fire",
     "mythic": "The Tower of Babel. The destruction of Sodom and Gomorrah. Shiva's destructive dance. The lightning of Zeus and Thor.",
     "questions": [
       "How might the current situation dramatically alter my perspective?",
@@ -814,7 +831,8 @@
     "archetype": "The Heavenly Guide",
     "hebrew": "Tzaddi/Fishhook/90 or, in some decks, He[as]/Window/5",
     "numerology": "17 = 1 + 7 = 8 (action, movement, swiftness)",
-    "elemental": "Aquarius",
+    "astrology": "Aquarius",
+    "elemental": "Air",
     "mythic": "The star that guided the Magi. Aphrodite. Venus. The Pleiades. Moses bringing forth water from the rock.",
     "questions": [
       "What would my higher power direct me to do?",
@@ -859,7 +877,8 @@
     "archetype": "The Holy Feminine/The Crone",
     "hebrew": "Koph/Back of the Head/100",
     "numerology": "18 = 1 + 8 = 9 (fullness, readiness, ripeness)",
-    "elemental": "Pisces",
+    "astrology": "Pisces",
+    "elemental": "Water",
     "mythic": "Kali, the dark-skinned divine mother associated with time, the eternal night, and the female principle. Hecate, goddess of night and darkness, who, like Anubis, assists others in their travels to the underworld. ",
     "questions": [
       "How can I face my fears and move forward?",
@@ -903,7 +922,8 @@
     "archetype": "The Holy Masculine",
     "hebrew": "Resh/Head/200",
     "numerology": "19 = 1 + 9 = 10 (completion, exhaustion) 1 + 0 = 1 (starting point, opportunity)",
-    "elemental": "The Sun",
+    "astrology": "The Sun",
+    "elemental": "Fire",
     "mythic": "God the Father. Sun gods, including Ra, Apollo, and Helios. The moment of baptism. Claiming a new faith as your own.",
     "questions": [
       "How can I take best advantage of the attention coming my way?",
@@ -949,6 +969,7 @@
     "archetype": "Resurrection",
     "hebrew": "Sin/Tooth/300",
     "numerology": "20 = 2 + 0 = 2 (division, duality)",
+    "astrology": "Pluto",
     "elemental": "Fire",
     "mythic": "The resurrected Christ. The Last Judgment of Revelation. The phoenix, which rises to new life from its own ashes.",
     "questions": [
@@ -994,7 +1015,8 @@
     "archetype": "Enlightenment",
     "hebrew": "Tau/Cross/400",
     "numerology": "21 = 2 + 1 = 3 (expression, result)",
-    "elemental": "Saturn",
+    "astrology": "Saturn",
+    "elemental": "Earth",
     "mythic": "The ascended Christ. The Buddha attaining enlightenment. The alpha and the omega. The completion of the alchemist's great work.",
     "questions": [
       "For me, what would having it all mean?",
@@ -1038,6 +1060,7 @@
       ]
     },
     "numerology": "1 (The Origin: the starting point, the seed, opportunity)",
+    "elemental": "Water",
     "astrology": "Cancer, Scorpio, Pisces",
     "affirmation": "\"I listen to the counsel of my heart.\"",
     "questions": [
@@ -1083,6 +1106,7 @@
       ]
     },
     "numerology": "2 (The Other: duality, division, debate)",
+    "elemental": "Water",
     "astrology": "Venus in Cancer",
     "affirmation": "\"I am attuned to what my heart truly desires.\"",
     "questions": [
@@ -1122,6 +1146,7 @@
       ]
     },
     "numerology": "3 (The Result: expression, productivity, output)",
+    "elemental": "Water",
     "astrology": "Mercury in Cancer",
     "affirmation": "\"I allow my actions to reflect my true emotions.\"",
     "questions": [
@@ -1165,6 +1190,7 @@
       ]
     },
     "numerology": "4 (The Status Quo: stability, equality, persistence)",
+    "elemental": "Water",
     "astrology": "Moon in Cancer",
     "affirmation": "\"I appreciate what I've been given.\"",
     "questions": [
@@ -1212,6 +1238,7 @@
       ]
     },
     "numerology": "5 (The Catalyst: instability, resistance, confrontation)",
+    "elemental": "Water",
     "astrology": "Mars in Scorpio",
     "affirmation": "\"I learn from my losses and move on.\"",
     "questions": [
@@ -1255,6 +1282,7 @@
       ]
     },
     "numerology": "6 (The Adjustment: cooperation, collaboration, interaction)",
+    "elemental": "Water",
     "astrology": "Sun in Scorpio",
     "affirmation": "\"I freely give myself to others, expecting nothing in return.\"",
     "questions": [
@@ -1296,6 +1324,7 @@
       ]
     },
     "numerology": "7 (The Motive: imagination, inner work, psychology)",
+    "elemental": "Water",
     "astrology": "Venus in Scorpio",
     "affirmation": "\"I use inner vision as a tool for growth.\"",
     "questions": [
@@ -1343,6 +1372,7 @@
       ]
     },
     "numerology": "8 (The Action: movement, outer work, swiftness)",
+    "elemental": "Water",
     "astrology": "Saturn in Pisces",
     "affirmation": "\"I am always open to opportunities for growth.\"",
     "questions": [
@@ -1386,6 +1416,7 @@
       ]
     },
     "numerology": "9 (The Completion: fullness, readiness, ripeness)",
+    "elemental": "Water",
     "astrology": "Jupiter in Pisces",
     "affirmation": "\"I have everything I need to be happy.\"",
     "questions": [
@@ -1426,6 +1457,7 @@
       ]
     },
     "numerology": "10 (The End: finality, completion, exhaustion)",
+    "elemental": "Water",
     "astrology": "Mars in Pisces",
     "affirmation": "\"I take time to appreciate what I've been given.\"",
     "questions": [
@@ -1631,6 +1663,7 @@
       ]
     },
     "numerology": "1 (The Origin: the starting point, the seed, opportunity)",
+    "elemental": "Air",
     "astrology": "Libra, Aquarius, Gemini",
     "affirmation": "\"I take the time to think things through.\"",
     "questions": [
@@ -1673,6 +1706,7 @@
       ]
     },
     "numerology": "2 (The Other: duality, division, debate)",
+    "elemental": "Air",
     "astrology": "Moon in Libra",
     "affirmation": "\"I strive to see all sides of every issue.\"",
     "questions": [
@@ -1715,6 +1749,7 @@
       ]
     },
     "numerology": "3 (The Result: expression, productivity, output)",
+    "elemental": "Air",
     "astrology": "Saturn in Libra",
     "affirmation": "\"I learn from failures and setbacks.\"",
     "questions": [
@@ -1755,6 +1790,7 @@
       ]
     },
     "numerology": "4 (The Status Quo: stability, equality, persistence)",
+    "elemental": "Air",
     "astrology": "Jupiter in Libra",
     "affirmation": "\"I think before taking action.\"",
     "questions": [
@@ -1800,6 +1836,7 @@
       ]
     },
     "numerology": "5 (The Catalyst: instability, resistance, confrontation)",
+    "elemental": "Air",
     "astrology": "Venus in Aquarius",
     "affirmation": "\"Even as I care for myself, I am mindful of the needs of others.\"",
     "questions": [
@@ -1843,6 +1880,7 @@
       ]
     },
     "numerology": "6 (The Adjustment: cooperation, collaboration, interaction)",
+    "elemental": "Air",
     "astrology": "Mercury in Aquarius",
     "affirmation": "\"I keep an open mind.\"",
     "questions": [
@@ -1884,6 +1922,7 @@
       ]
     },
     "numerology": "7 (The Motive: imagination, inner work, psychology)",
+    "elemental": "Air",
     "astrology": "Moon in Aquarius",
     "affirmation": "\"I hold myself to the highest ethical standards.\"",
     "questions": [
@@ -1930,6 +1969,7 @@
       ]
     },
     "numerology": "8 (The Action: movement, outer work, swiftness)",
+    "elemental": "Air",
     "astrology": "Jupiter in Gemini",
     "affirmation": "\"I know my own limits.\"",
     "questions": [
@@ -1974,6 +2014,7 @@
       ]
     },
     "numerology": "9 (The Completion: fullness, readiness, ripeness)",
+    "elemental": "Air",
     "astrology": "Mars in Gemini",
     "affirmation": "\"I do not worry about what I cannot control.\"",
     "questions": [
@@ -2019,6 +2060,7 @@
       ]
     },
     "numerology": "10 (The End: finality, completion, exhaustion)",
+    "elemental": "Air",
     "astrology": "Sun in Gemini",
     "affirmation": "\"When my limits are exceeded, I take action on my own behalf.\"",
     "questions": [
@@ -2242,6 +2284,7 @@
       ]
     },
     "numerology": "1 (The Origin: the starting point, the seed, opportunity)",
+    "elemental": "Fire",
     "astrology": "Aries, Leo, Sagittarius",
     "affirmation": "\"I jump at the opportunity to pursue my heart's desire.\"",
     "questions": [
@@ -2284,6 +2327,7 @@
       ]
     },
     "numerology": "2 (The Other: division, debate, duality)",
+    "elemental": "Fire",
     "astrology": "Mars in Aries",
     "affirmation": "\"With my goals in mind, I make confident choices.\"",
     "questions": [
@@ -2326,6 +2370,7 @@
       ]
     },
     "numerology": "3 (The Result: expression, productivity, output)",
+    "elemental": "Fire",
     "astrology": "Sun in Aries",
     "affirmation": "\"I take the steps necessary to put my plans in action.\"",
     "questions": [
@@ -2368,6 +2413,7 @@
       ]
     },
     "numerology": "4 (The Status Quo: stability, equality, persistence)",
+    "elemental": "Fire",
     "astrology": "Venus in Aries",
     "affirmation": "\"My contributions are worthy of celebration.\"",
     "questions": [
@@ -2409,6 +2455,7 @@
       ]
     },
     "numerology": "5 (The Catalyst: instability, resistance, confrontation)",
+    "elemental": "Fire",
     "astrology": "Saturn in Leo",
     "affirmation": "\"I can express dissent in constructive ways.\"",
     "questions": [
@@ -2454,6 +2501,7 @@
       ]
     },
     "numerology": "6 (The Adjustment: cooperation, collaboration, interaction)",
+    "elemental": "Fire",
     "astrology": "Jupiter in Leo",
     "affirmation": "\"I value sincere praise.\"",
     "questions": [
@@ -2495,6 +2543,7 @@
       ]
     },
     "numerology": "7 (The Motive: imagination, inner work, psychology)",
+    "elemental": "Fire",
     "astrology": "Mars in Leo",
     "affirmation": "\"I am willing to take a stand for what I believe in.\"",
     "questions": [
@@ -2539,6 +2588,7 @@
       ]
     },
     "numerology": "8 (The Action: movement, outer work, swiftness)",
+    "elemental": "Fire",
     "astrology": "Mercury in Sagittarius",
     "affirmation": "\"I adapt quickly to change.\"",
     "questions": [
@@ -2585,6 +2635,7 @@
       ]
     },
     "numerology": "9 (The Completion: fullness, readiness, ripeness)",
+    "elemental": "Fire",
     "astrology": "Moon in Sagittarius",
     "affirmation": "\"When the going gets tough, I stay the course.\"",
     "questions": [
@@ -2626,6 +2677,7 @@
       ]
     },
     "numerology": "10 (The End: finality, completion, exhaustion)",
+    "elemental": "Fire",
     "astrology": "Saturn in Sagittarius",
     "affirmation": "\"I respect my own limits.\"",
     "questions": [
@@ -2826,6 +2878,7 @@
       ]
     },
     "numerology": "1 (The Origin: the starting point, the seed, opportunity)",
+    "elemental": "Earth",
     "astrology": "Capricorn, Taurus, Virgo",
     "affirmation": "\"I am open to and thankful for my blessings.\"",
     "questions": [
@@ -2869,6 +2922,7 @@
       ]
     },
     "numerology": "2 (The Other: duality, division, debate)",
+    "elemental": "Earth",
     "astrology": "Jupiter in Capricorn",
     "affirmation": "\"Before taking action, I consider costs.\"",
     "questions": [
@@ -2913,6 +2967,7 @@
       ]
     },
     "numerology": "3 (The Result: expression, productivity, output)",
+    "elemental": "Earth",
     "astrology": "Mars in Capricorn",
     "affirmation": "\"My work produces results.\"",
     "questions": [
@@ -2956,6 +3011,7 @@
       ]
     },
     "numerology": "4 (The Status Quo: stability, equality, persistence)",
+    "elemental": "Earth",
     "astrology": "Sun in Capricorn",
     "affirmation": "\"I use my resources wisely.\"",
     "questions": [
@@ -3000,6 +3056,7 @@
       ]
     },
     "numerology": "5 (The Catalyst: instability, resistance, confrontation)",
+    "elemental": "Earth",
     "astrology": "Mercury in Taurus",
     "affirmation": "\"I have faith that what I need will appear.\"",
     "questions": [
@@ -3044,6 +3101,7 @@
       ]
     },
     "numerology": "6 (The Adjustment: cooperation, collaboration, interaction)",
+    "elemental": "Earth",
     "astrology": "Moon in Taurus",
     "affirmation": "\"Knowing I will receive more, I share my resources freely.\"",
     "questions": [
@@ -3087,6 +3145,7 @@
       ]
     },
     "numerology": "7 (The Motive: imagination, inner work, psychology)",
+    "elemental": "Earth",
     "astrology": "Saturn in Taurus",
     "affirmation": "\"To stay on target, I measure my progress.\"",
     "questions": [
@@ -3132,6 +3191,7 @@
       ]
     },
     "numerology": "8 (The Action: movement, outer work, swiftness)",
+    "elemental": "Earth",
     "astrology": "Sun in Virgo",
     "affirmation": "\"I give myself wholeheartedly to the task of the moment.\"",
     "questions": [
@@ -3173,6 +3233,7 @@
       ]
     },
     "numerology": "9 (The Completion: fullness, readiness, ripeness)",
+    "elemental": "Earth",
     "astrology": "Venus in Virgo",
     "affirmation": "\"I know enough to be confident in my decisions.\"",
     "questions": [
@@ -3215,6 +3276,7 @@
       ]
     },
     "numerology": "10 (The End: finality, completion, exhaustion)",
+    "elemental": "Earth",
     "astrology": "Mercury in Virgo",
     "affirmation": "\"I keep physical and financial matters in perspective.\"",
     "questions": [
