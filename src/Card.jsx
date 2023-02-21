@@ -107,7 +107,7 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
         return (
             <div className="Card">
                 <h1></h1>
-                <img src={cardBack} />
+                <img src={cardBack} className='cardBack'/>
                 <p></p>
             </div>
         )

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import TarotLibrary from './tarot_library'
+import CardSpreadOptions from './card_spread_options.json'
 
 export default function Shuffle() {
     const [numberOfCards, setNumberOfCards] = useState(3);
@@ -13,6 +14,9 @@ export default function Shuffle() {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedCard, setSelectedCard] = useState({});
     const [frozen, setFrozen] = useState(false);
+    const [cardTitles, setCardTitles] = useState(CardSpreadOptions[numberOfCards - 1]);
+
+    console.log(cardTitles);
 
     function chooseThreeCards() {
         let counter = 0;
@@ -34,9 +38,10 @@ export default function Shuffle() {
     function changeNumberOfCards(clicks) {
         if (frozen) { return; }
         let newSpreadNumber = (clicks + numberOfCards) % 3;
-        if(newSpreadNumber === 0) newSpreadNumber = 3;
+        if (newSpreadNumber === 0) newSpreadNumber = 3;
 
         setNumberOfCards(newSpreadNumber);
+        setCardTitles(CardSpreadOptions[newSpreadNumber - 1]);
     }
 
     function updateFlip(position) {
@@ -63,19 +68,22 @@ export default function Shuffle() {
         setModalVisible(false);
     };
 
-    function ShuffleSpread( ) {
-            return (
-                <div className='spreadContainer'>
-                    {cards.map((card, index) => (
-                        (index < numberOfCards) ?
-                            <span className='cardContainer' onClick={() => { updateFlip(index) }}>
+    function ShuffleSpread() {
+        return (
+            <div className='spreadContainer'>
+                {cards.map((card, index) => (
+                    (index < numberOfCards) ?
+                        <span className='cardContainer'>
+                            <h1 className='positionName'>{cardTitles[0][index]}</h1>
+                            <span onClick={() => { updateFlip(index) }}>
                                 <Card cardProfile={card} flipped={isFlipped[index]} style={cardStyle} />
                             </span>
-                            :
-                            <></>
-                        ))}
-                </div>
-            )
+                        </span>
+                        :
+                        <></>
+                ))}
+            </div>
+        )
     }
 
     return (
@@ -89,16 +97,16 @@ export default function Shuffle() {
                             close={onCloseDetails} />
                     </div> :
                     <div className='spreadContainer'>
-                        <span style={ frozen ? {color: 'gray'} : {} }>
-                        <FontAwesomeIcon icon={faChevronLeft}
-                            className='chevron' 
-                            onClick={() => { changeNumberOfCards(-1) }} />
+                        <span style={frozen ? { color: 'gray' } : {}}>
+                            <FontAwesomeIcon icon={faChevronLeft}
+                                className='chevron'
+                                onClick={() => { changeNumberOfCards(-1) }} />
                         </span>
                         <ShuffleSpread />
-                        <span style={ frozen ? {color: 'gray'} : {} }>
-                        <FontAwesomeIcon icon={faChevronRight}
-                            className='chevron'
-                            onClick={() => { changeNumberOfCards(1) }} />
+                        <span style={frozen ? { color: 'gray' } : {}}>
+                            <FontAwesomeIcon icon={faChevronRight}
+                                className='chevron'
+                                onClick={() => { changeNumberOfCards(1) }} />
                         </span>
                     </div>
             }

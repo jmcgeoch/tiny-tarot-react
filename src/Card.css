@@ -1,5 +1,6 @@
 .Card {
     margin: 10px;
+    display: inline;
 }
 
 h1 {
@@ -127,4 +128,10 @@ li {
 
 div.infoColumn.meaningsContainer {
     width: unset;
+}
+
+.cardBack {
+    margin-top: 54px;
+    margin-left: auto;
+  margin-right: auto;
 }
