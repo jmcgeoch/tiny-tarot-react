@@ -9,6 +9,9 @@ export default function Shuffle() {
     const [numberOfCards, setNumberOfCards] = useState(3);
     const [cards] = useState(chooseThreeCards);
     const [isFlipped, setIsFlipped] = useState([false, false, false]);
+    const [cardStyle, setCardStyle] = useState('brief')
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedCard, setSelectedCard] = useState({});
 
     function chooseThreeCards() {
         let counter = 0;
@@ -48,26 +51,62 @@ export default function Shuffle() {
             }
         });
 
+        if (isFlipped[position] === true) {
+            setSelectedCard(cards[position]);
+            setModalVisible(true);
+            setCardStyle('full');
+        }
         setIsFlipped(newFlippedMap);
     }
 
-    return (
-        <div className="App-body">
+    const onCloseDetails = () => {
+        setCardStyle('brief'); 
+        setModalVisible(false); 
+    };
+
+
+    function generateCards(numberOfCards) {
+
+        return (
+        <>
+        </>
+        )
+    }
+
+    function ShuffleSpread() {
+        return(
+            <>
             <FontAwesomeIcon icon={faChevronLeft}
                 className='chevron'
                 onClick={() => { changeNumberOfCards(-1) }} />
             <span className='cardContainer' onClick={() => { updateFlip(0) }}>
-                <Card cardProfile={cards[0]} flipped={isFlipped[0]} />
+                <Card cardProfile={cards[0]} flipped={isFlipped[0]} style={cardStyle} />
             </span>
             <span className='cardContainer' onClick={() => { updateFlip(1) }}>
-                <Card cardProfile={cards[1]} flipped={isFlipped[1]} />
+                <Card cardProfile={cards[1]} flipped={isFlipped[1]} style={cardStyle}/>
             </span>
             <span className='cardContainer' onClick={() => { updateFlip(2) }}>
-                <Card cardProfile={cards[2]} flipped={isFlipped[2]} />
+                <Card cardProfile={cards[2]} flipped={isFlipped[2]} style={cardStyle}/>
             </span>
             <FontAwesomeIcon icon={faChevronRight}
                 className='chevron'
                 onClick={() => { changeNumberOfCards(1) }} />
+            </>
+        )
+    }
+
+    return (
+        <div className="App-body">
+            {
+                (modalVisible) ?
+                <div className='cardModal'>
+                    <Card cardProfile={selectedCard} 
+                    flipped={true} 
+                    style={'full'}
+                    close={onCloseDetails}/>
+                    </div> :
+                <ShuffleSpread />
+            }
         </div>
     );
 }

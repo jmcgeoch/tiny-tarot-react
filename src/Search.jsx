@@ -34,6 +34,8 @@ export default function Search() {
     const onCloseDetails = () => { setModalVisible(false); };
 
     function CardContainer() {
+
+        // shows the entire full screen card details
         if (modalVisible) {
             return (
                 <div className='cardsContainer full'>
@@ -45,6 +47,8 @@ export default function Search() {
                 </div>
             )
         } else {
+
+            // shows a list of all the cards for that section
             return (
                 <div className='cardsContainer'>
                     {cardData.map((card, index) => (
