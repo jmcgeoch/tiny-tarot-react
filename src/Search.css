@@ -25,11 +25,10 @@
 }
 
 .cardsSearchContainer {
-    height: 99%;
+    height: 100%;
     width: 100%;
-    margin-bottom: 5px;
     overflow: hidden;
-    border-radius: 0 0 15px 0;
+    border-radius: 15px 0 15px 0;
 }
 
 .cardsContainer {
@@ -41,16 +40,25 @@
     width: 100%;
     overflow: scroll;
     margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: inherit;
 }
 
 .full {
-    margin: 20px 20px 20px 0;
+    margin: 20px 0 20px 0;
     padding: 10px;
     background-color: white;
-    /* height: 95% !important; */
     width: auto;
     border-radius: 25px;
     overflow: hidden;
+    flex-wrap: nowrap;
 }
 
 .searchHeader {
@@ -60,25 +68,25 @@
 
 .cardTitle {
     margin-top: 20px;
+    margin-right: 20px;
     display: flex;
     align-items: flex-end;
-    width: 30vw;
+    width: 16vw;
 }
 
 .vertDivider {
     border-left: 1px solid gray;
     height: 40vh;
     position: relative;
-    margin-right: 10px;
 }
 
 .cardsContainer::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
     /* width of the entire scrollbar */
 }
 
 .cardsContainer::-webkit-scrollbar-track {
-    background: lavender;
+    background: white;
     /* color of the tracking area */
 }
 
@@ -87,6 +95,6 @@
     /* color of the scroll thumb */
     border-radius: 20px;
     /* roundness of the scroll thumb */
-    border: 3px solid lavender;
+    /* border: 3px solid purple; */
     /* creates padding around scroll thumb */
 }

@@ -52,32 +52,31 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
                     </div>
                 </div>
                 <div className='cardBody'>
-                        <div className='fullCardHeader'>
-                            <span className='headerKeywords'><h2>{keywords.join(' • ')}</h2></span>
-                            <div onClick={() => { close() }}><FontAwesomeIcon icon={faXmark} size={'xl'} /></div>
-                        </div>
-                        <div className='horizDivider'></div>
+                    <div className='fullCardHeader'>
+                        <span className='headerKeywords'><h2>{keywords.join(' • ')}</h2></span>
+                        <div onClick={() => { close() }}><FontAwesomeIcon icon={faXmark} size={'xl'} /></div>
+                    </div>
                     <div className='infoColumn'>
-                        <div className='infoRow fullCard shrink'>
-                            <span className='fact'><h4>Number</h4><p>{cardProfile.number}</p></span>
-                            <span className='fact'><h4>Element</h4><p>{cardProfile.elemental}</p></span>
-                            <span className='fact'><h4>Astrology</h4><p>{cardProfile.astrology}</p></span>
-                        </div>
-                        <div className='infoColumn compact'>
-                            {
-                                (cardProfile.mythic)  ?
-                                <>
-                                <h4>Mythology</h4>
-                                <p className='fact'>{cardProfile.mythic}</p>
-                                </>
-                                :
-                                <>
+                        <div className='infoColumn meaningsContainer'>
+                            <div className='infoRow fullCard shrink'>
+                                <span className='fact'><h4>Number</h4><p>{cardProfile.number}</p></span>
+                                <span className='fact'><h4>Element</h4><p>{cardProfile.elemental}</p></span>
+                                <span className='fact'><h4>Astrology</h4><p>{cardProfile.astrology}</p></span>
+                            </div>
+                            <div className='infoColumn compact'>
+                                {
+                                    (cardProfile.mythic) ?
+                                        <>
+                                            <h4>Mythology</h4>
+                                            <p className='fact'>{cardProfile.mythic}</p>
+                                        </>
+                                        :
+                                        <></>
+                                }
                                 <h4>Numerology</h4>
                                 <p className='fact'>{cardProfile.numerology}</p>
-                                </>
-                            }
-                                
                             </div>
+                        </div>
                         <div className='infoRow'>
                             <div className='infoColumn'>
                                 <h4>Light Meanings</h4>
@@ -99,10 +98,8 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
                                     }
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         )

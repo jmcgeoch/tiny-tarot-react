@@ -6,6 +6,8 @@ import SearchBar from './search/SearchBar';
 import TarotLibrary from './tarot_library'
 import { useState } from 'react';
 import { majorArcana, wands, cups, swords, pentacles } from './resources/icons/iconIndex';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function Search() {
     const tarotSections = new Map();
@@ -26,6 +28,16 @@ export default function Search() {
         if (modalVisible) onCloseDetails();
     }
 
+    function getNextCard({ count }) {
+        let cardIndex = parseInt(card.number);
+        console.log(cardIndex)
+        cardIndex += count;
+        if (cardData.length > cardIndex >= 0) {
+            setCard(cardData[cardIndex]);
+        }
+        
+    }
+
     const onOpenDetails = (card) => {
         setCard(card);
         setModalVisible(true);
@@ -38,12 +50,24 @@ export default function Search() {
         // shows the entire full screen card details
         if (modalVisible) {
             return (
-                <div className='cardsContainer full'>
+                <div className='modalContainer'>
+                    <div>
+                        <FontAwesomeIcon icon={faChevronLeft}
+                            className='chevron'
+                            onClick={() => { getNextCard(-1) }} />
+                    </div>
+                    <div className='cardsContainer full'>
                     <Card cardProfile={card}
                         flipped={true}
                         style='full'
                         close={onCloseDetails}
                     />
+                    </div>
+                    <div>
+                        <FontAwesomeIcon icon={faChevronRight}
+                            className='chevron'
+                            onClick={() => { getNextCard(1) }} />
+                    </div>
                 </div>
             )
         } else {
@@ -69,15 +93,35 @@ export default function Search() {
         <>
             <div className='Search-body'>
                 <div className='iconNavigation'>
-                    <img src={majorArcana} className='icon' onClick={() => { setFilter("Major Arcana") }} />
-                    <img src={wands} className='icon' onClick={() => { setFilter("Wands") }} />
-                    <img src={cups} className='icon' onClick={() => { setFilter("Cups") }} />
-                    <img src={swords} className='icon' onClick={() => { setFilter("Swords") }} />
-                    <img src={pentacles} className='icon' onClick={() => { setFilter("Pentacles") }} />
+                    <img src={majorArcana}
+                        className='icon'
+                        onClick={() => { setFilter("Major Arcana") }}
+                        alt='Major Arcana'
+                    />
+                    <img src={wands}
+                        className='icon'
+                        onClick={() => { setFilter("Wands") }}
+                        alt='Wands Suit'
+                    />
+                    <img src={cups}
+                        className='icon'
+                        onClick={() => { setFilter("Cups") }}
+                        alt='Cups Suit'
+                    />
+                    <img src={swords}
+                        className='icon'
+                        onClick={() => { setFilter("Swords") }}
+                        alt='Swords Suit'
+                    />
+                    <img src={pentacles}
+                        className='icon'
+                        onClick={() => { setFilter("Pentacles") }}
+                        alt='Pentacles Suit'
+                    />
                 </div>
                 <div className='vertDivider'></div>
                 <div className='cardsSearchContainer'>
-                    {(!modalVisible)  ? <div className='searchHeader'>
+                    {(!modalVisible) ? <div className='searchHeader'>
                         <h1 className='cardTitle'>
                             {currentFilter}
                         </h1>
