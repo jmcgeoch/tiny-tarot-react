@@ -1,0 +1,67 @@
+.spreadPicker {
+    background-color: white;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 20px;
+    text-align: left;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.listItem {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    width: auto;
+    font-family: 'Verdana', cursive;
+    font-size: 2vmin;
+}
+
+button {
+    width: 150px;
+    height:  40px;
+    border-radius: 25px;
+    border: 1px solid purple;
+    background-color: white;
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+}
+
+.listRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.check {
+    width: 25px;
+}
+
+h2 {
+    margin: 5px;
+}
+
+.horizDivider {
+    border-bottom: 1px solid gray;
+    width: 50%;
+    position: relative;
+    align-self: center;
+}

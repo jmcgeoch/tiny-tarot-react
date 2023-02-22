@@ -35,7 +35,7 @@ export default function Search() {
         if (cardData.length > cardIndex >= 0) {
             setCard(cardData[cardIndex]);
         }
-        
+
     }
 
     const onOpenDetails = (card) => {
@@ -57,11 +57,11 @@ export default function Search() {
                             onClick={() => { getNextCard(-1) }} />
                     </div>
                     <div className='cardsContainer full'>
-                    <Card cardProfile={card}
-                        flipped={true}
-                        style='full'
-                        close={onCloseDetails}
-                    />
+                        <Card cardProfile={card}
+                            flipped={true}
+                            style='full'
+                            close={onCloseDetails}
+                        />
                     </div>
                     <div>
                         <FontAwesomeIcon icon={faChevronRight}
@@ -92,41 +92,51 @@ export default function Search() {
     return (
         <>
             <div className='Search-body'>
-                <div className='iconNavigation'>
-                    <img src={majorArcana}
-                        className='icon'
-                        onClick={() => { setFilter("Major Arcana") }}
-                        alt='Major Arcana'
-                    />
-                    <img src={wands}
-                        className='icon'
-                        onClick={() => { setFilter("Wands") }}
-                        alt='Wands Suit'
-                    />
-                    <img src={cups}
-                        className='icon'
-                        onClick={() => { setFilter("Cups") }}
-                        alt='Cups Suit'
-                    />
-                    <img src={swords}
-                        className='icon'
-                        onClick={() => { setFilter("Swords") }}
-                        alt='Swords Suit'
-                    />
-                    <img src={pentacles}
-                        className='icon'
-                        onClick={() => { setFilter("Pentacles") }}
-                        alt='Pentacles Suit'
-                    />
-                </div>
-                <div className='vertDivider'></div>
+                <>
+                    {
+                        (!modalVisible) ?
+                            <>
+                                <div className='iconNavigation'>
+                                    <img src={majorArcana}
+                                        className='icon'
+                                        onClick={() => { setFilter("Major Arcana") }}
+                                        alt='Major Arcana'
+                                    />
+                                    <img src={wands}
+                                        className='icon'
+                                        onClick={() => { setFilter("Wands") }}
+                                        alt='Wands Suit'
+                                    />
+                                    <img src={cups}
+                                        className='icon'
+                                        onClick={() => { setFilter("Cups") }}
+                                        alt='Cups Suit'
+                                    />
+                                    <img src={swords}
+                                        className='icon'
+                                        onClick={() => { setFilter("Swords") }}
+                                        alt='Swords Suit'
+                                    />
+                                    <img src={pentacles}
+                                        className='icon'
+                                        onClick={() => { setFilter("Pentacles") }}
+                                        alt='Pentacles Suit'
+                                    />
+                                </div>
+                                <div className='vertDivider'></div>
+                            </>
+                            :
+                            ''
+                    }
+                </>
                 <div className='cardsSearchContainer'>
-                    {(!modalVisible) ? <div className='searchHeader'>
-                        <h1 className='cardTitle'>
-                            {currentFilter}
-                        </h1>
-                        <SearchBar />
-                    </div> : ''}
+                    {(!modalVisible) ?
+                        <div className='searchHeader'>
+                            <h1 className='cardTitle'>
+                                {currentFilter}
+                            </h1>
+                            <SearchBar />
+                        </div> : ''}
                     <CardContainer />
                 </div>
             </div>

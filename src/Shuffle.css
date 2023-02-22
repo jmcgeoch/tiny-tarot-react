@@ -5,7 +5,7 @@
 
 .App-body {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center !important;
     justify-content: space-evenly;
     font-size: calc(2vmin);
@@ -17,10 +17,25 @@
     background-color: lavender;
 }
 
+.icon {
+    width: 5vw;
+    outline: none;
+    padding-bottom: 20px;
+}
+
+.iconNavigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100px;
+}
+
 .positionName {
     margin-top: 20px;
     margin-bottom: 0;
     color: black;
+    text-decoration: none;
 }
 
 .cardContainer {
@@ -46,4 +61,10 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+}
+
+.vertDivider {
+    border-left: 1px solid gray;
+    height: 40vh;
+    position: relative;
 }

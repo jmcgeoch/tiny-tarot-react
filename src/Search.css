@@ -32,7 +32,6 @@
 }
 
 .cardsContainer {
-    background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -42,6 +41,11 @@
     margin-bottom: 10px;
     align-items: center;
     justify-content: center;
+}
+
+.cardWrapper {
+    margin: 5px;
+    max-height: 350px;
 }
 
 .modalContainer {
@@ -86,7 +90,7 @@
 }
 
 .cardsContainer::-webkit-scrollbar-track {
-    background: white;
+    background: lavender;
     /* color of the tracking area */
 }
 
@@ -94,7 +98,4 @@
     background-color: purple;
     /* color of the scroll thumb */
     border-radius: 20px;
-    /* roundness of the scroll thumb */
-    /* border: 3px solid purple; */
-    /* creates padding around scroll thumb */
 }
