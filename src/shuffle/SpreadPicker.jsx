@@ -4,14 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
-export default function SpreadPicker({ spreadList }) {
+export default function SpreadPicker({ spreadList, save }) {
     const [chosenSpread, setChosenSpread] = useState(spreadList);
-    
+    const [updated, setUpdated] = useState(false);
 
     function updateSpread(num, i) {
-        let newChosenSpread = [...chosenSpread];
-        newChosenSpread[num] = i;
-        setChosenSpread(newChosenSpread);
+        if (chosenSpread[num] !== i) {
+            let newChosenSpread = [...chosenSpread];
+            setUpdated(true)
+            newChosenSpread[num] = i;
+            setChosenSpread(newChosenSpread);
+        }
     }
 
     function OptionList({ number }) {
@@ -28,7 +31,8 @@ export default function SpreadPicker({ spreadList }) {
                                         <></>
                                 }
                             </div>
-                            <button className='listItem' onClick={() => { updateSpread(number, index) }}>
+                            <button className='listItem' 
+                                    onClick={() => { updateSpread(number, index) }}>
                                 {
                                     <span>{value.join(' • ')} </span>
                                 }
@@ -60,7 +64,10 @@ export default function SpreadPicker({ spreadList }) {
                 </div>
             </div>
             <div>
-                <button><b>Save</b></button>
+                <button className={` ${!updated ? 'inactive' : ''}`}
+                        onClick={() => {save(chosenSpread)}}>
+                        <b>Save</b>
+                </button>
             </div>
         </div>
     )

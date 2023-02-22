@@ -3,7 +3,6 @@ import { cardBack } from './resources/rootIndex';
 import CardImages from './resources/cards/cardImageIndex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 
 /** 
  * Styles
@@ -13,8 +12,6 @@ import { useState } from 'react';
 */
 
 export default function Card({ cardProfile, flipped, style = 'brief', close }) {
-    const [cardStyle, setCardStyle] = useState(style);
-
     let name = cardProfile.name;
     let imageName = cardProfile.img;
     let image = CardImages[imageName];

@@ -45,6 +45,11 @@ button {
     font-size: 20px;
 }
 
+.inactive {
+    background-color: #f5f5f5;
+    color: gray;
+}
+
 .listRow {
     display: flex;
     flex-direction: row;

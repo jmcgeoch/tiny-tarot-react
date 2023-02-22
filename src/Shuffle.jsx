@@ -80,10 +80,14 @@ export default function Shuffle() {
         setModalVisible(false);
     };
 
+    function onSave(spreadList) {
+        setSelectedSpreads(spreadList);
+    }
+
     function ShuffleContainer() {
         if (editSpread) {
             return (
-                <SpreadPicker spreadList={selectedSpreads}/>
+                <SpreadPicker spreadList={selectedSpreads} save={onSave}/>
             )
         } else {
             return (
@@ -105,12 +109,14 @@ export default function Shuffle() {
     }
 
     function ShuffleSpread() {
+        let spreadOption = selectedSpreads[numberOfCards - 1];
+
         return (
             <div className='spreadContainer'>
                 {cards.map((card, index) => (
                     (index < numberOfCards) ?
                         <span className='cardContainer'>
-                            <h1 className='positionName'>{currentSpread[0][index]}</h1>
+                            <h1 className='positionName'>{currentSpread[spreadOption][index]}</h1>
                             <span onClick={() => { updateFlip(index) }}>
                                 <Card cardProfile={card} flipped={isFlipped[index]} style={cardStyle} />
                             </span>
