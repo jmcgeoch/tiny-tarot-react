@@ -31,15 +31,13 @@ export default function Search() {
         if (modalVisible) onCloseDetails();
     }
 
-    //todo fix this function
-    function getNextCard({ count }) {
-        let cardIndex = parseInt(card.number);
+    function getNextCard(count) {
+        let cardIndex = TarotLibrary.findIndex((c) => c.name === card.name);
+        const tempNewIndex = cardIndex + count;
 
-        cardIndex += count;
-        if (cardData.length > cardIndex >= 0) {
-            setCard(cardData[cardIndex]);
+        if (tempNewIndex > 0 && tempNewIndex < 78) {
+            setCard(TarotLibrary[tempNewIndex]);
         }
-
     }
 
     const onOpenDetails = (card) => {
@@ -47,8 +45,8 @@ export default function Search() {
         setModalVisible(true);
     };
 
-    const onCloseDetails = () => { 
-        setModalVisible(false); 
+    const onCloseDetails = () => {
+        setModalVisible(false);
     };
 
     const onSearchClick = () => {
@@ -60,8 +58,8 @@ export default function Search() {
         const filtered = TarotLibrary.filter(card => {
             let keywordString = (card.name + ' ' + card.elemental + ' ' + card.astrology + ' ' + card.keywords.join(' ')).toLowerCase();
             let numberMatch = parseInt(card.number) === parseInt(keyword);
-            let nameMatch = keywordString.includes(keyword.toLowerCase()) ;
-            
+            let nameMatch = keywordString.includes(keyword.toLowerCase());
+
             return numberMatch || nameMatch;
         })
         setKeyword(keyword);
