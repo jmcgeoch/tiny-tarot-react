@@ -36,6 +36,11 @@ img {
 li {
     margin: 5px 0 5px 0;
     list-style-type: circle;
+    color: #303030;
+}
+
+p {
+    color: #303030;
 }
 
 .meaningsContainer {

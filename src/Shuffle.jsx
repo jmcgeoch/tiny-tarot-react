@@ -4,7 +4,7 @@ import SpreadPicker from './shuffle/SpreadPicker';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { file, shuffle, titleEdit } from './resources/icons/iconIndex';
+import { file, shuffle, settings } from './resources/icons/iconIndex';
 import TarotLibrary from './tarot_library'
 import CardSpreadOptions from './card_spread_options'
 
@@ -19,8 +19,6 @@ export default function Shuffle() {
     const [currentSpread, setCurrentSpread] = useState(CardSpreadOptions[numberOfCards - 1]);
     const [selectedSpreads, setSelectedSpreads] = useState([0, 0, 0]);
     const [editSpread, setEditSpread] = useState(false);
-
-    console.log(currentSpread);
 
     function chooseThreeCards() {
         let counter = 0;
@@ -152,11 +150,11 @@ export default function Shuffle() {
                                 alt='Save'
                                 title='Save'
                             />
-                            <img src={titleEdit}
+                            <img src={settings}
                                 className='icon'
                                 onClick={() => { setEditSpread(true) }}
-                                alt='Edit spread'
-                                title='Edit Spread'
+                                alt='Settings'
+                                title='Settings'
                             />
                         </div>
                         <div className='vertDivider'></div>

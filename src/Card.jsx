@@ -24,14 +24,14 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
         return (
             <div className="Card">
                 <h1>{name}</h1>
-                <img src={image} />
+                <img src={image} alt={name} title={name}/>
                 <p className='briefKeywords'><b>Keywords:</b> {keywords.join(", ")}</p>
             </div>
         )
     } else if (style === 'title') {
         return (
             <div className="Card">
-                <img src={image} className='titleStyleImage' />
+                <img src={image} className='titleStyleImage' alt={name} title={name}/>
             </div>
         )
     } else if (style === 'full') {
@@ -40,7 +40,7 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
                 <div className='left'>
                     <div className='infoColumn'>
                         <h1>{name}</h1>
-                        <img src={image} className='titleStyleImage' />
+                        <img src={image} className='titleStyleImage' alt={name} title={name}/>
                         {
                             (cardProfile.archetype) ?
                                 <p className='archetype'><i>{cardProfile.archetype}</i></p> :
@@ -104,7 +104,7 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
         return (
             <div className="Card">
                 <h1></h1>
-                <img src={cardBack} className='cardBack'/>
+                <img src={cardBack} className='cardBack' alt='card'/>
                 <p></p>
             </div>
         )
