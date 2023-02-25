@@ -1,6 +1,6 @@
 import './Card.css';
-import { cardBack } from './resources/rootIndex';
 import CardImages from './resources/cards/cardImageIndex';
+import { cardBack } from './resources/rootIndex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,27 +20,31 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
     let lightMeanings = cardProfile.meanings.light;
     let shadowMeanings = cardProfile.meanings.shadow;
 
-    if (flipped && style === 'brief') {
+    function CardImage() {
+        return (
+            <div className="Card">
+                <img src={image} className='cardImage' alt={name} title={name} />
+            </div>
+        )
+    }
+
+    function KeywordCard() {
         return (
             <div className="Card">
                 <h1>{name}</h1>
-                <img src={image} alt={name} title={name}/>
+                <img src={image} alt={name} title={name} />
                 <p className='briefKeywords'><b>Keywords:</b> {keywords.join(", ")}</p>
             </div>
         )
-    } else if (style === 'title') {
-        return (
-            <div className="Card">
-                <img src={image} className='titleStyleImage' alt={name} title={name}/>
-            </div>
-        )
-    } else if (style === 'full') {
+    }
+
+    function FullCard() {
         return (
             <div className='Card fullCard'>
                 <div className='left'>
                     <div className='infoColumn'>
                         <h1>{name}</h1>
-                        <img src={image} className='titleStyleImage' alt={name} title={name}/>
+                        <img src={image} className='cardImage' alt={name} title={name} />
                         {
                             (cardProfile.archetype) ?
                                 <p className='archetype'><i>{cardProfile.archetype}</i></p> :
@@ -59,19 +63,23 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
                                 <span className='fact'><h4>Number</h4><p>{cardProfile.number}</p></span>
                                 <span className='fact'><h4>Element</h4><p>{cardProfile.elemental}</p></span>
                                 <span className='fact'><h4>Astrology</h4><p>{cardProfile.astrology}</p></span>
+                                { (cardProfile.hebrew) && <span className='fact'><h4>Hebrew</h4><p>{cardProfile.hebrew}</p></span> }
                             </div>
                             <div className='infoColumn compact'>
                                 {
-                                    (cardProfile.mythic) ?
-                                        <>
-                                            <h4>Mythology</h4>
-                                            <p className='fact'>{cardProfile.mythic}</p>
-                                        </>
-                                        :
-                                        <></>
+                                    (cardProfile.mythic) &&
+                                    <>
+                                        <h4>Mythology</h4>
+                                        <p className='fact'>{cardProfile.mythic}</p>
+                                    </>
                                 }
-                                <h4>Numerology</h4>
-                                <p className='fact'>{cardProfile.numerology}</p>
+                                {
+                                    (cardProfile.numerology) &&
+                                    <>
+                                        <h4>Numerology</h4>
+                                        <p className='fact'>{cardProfile.numerology}</p>
+                                    </>
+                                }
                             </div>
                         </div>
                         <div className='infoRow'>
@@ -100,14 +108,19 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
                 </div>
             </div>
         )
+    }
+
+    if (flipped && style === 'brief') {
+        return <KeywordCard />
+    } else if (style === 'title') {
+        return <CardImage />
+    } else if (style === 'full') {
+        return <FullCard />
     } else {
         return (
             <div className="Card">
-                <h1></h1>
-                <img src={cardBack} className='cardBack' alt='card'/>
-                <p></p>
+                <img src={cardBack} className='cardBack' alt='card' />
             </div>
         )
     }
-
 }

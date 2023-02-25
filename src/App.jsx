@@ -1,7 +1,7 @@
 import './App.css';
-import Journal from './Journal';
-import Shuffle from './Shuffle';
-import Search from './Search';
+import Journal from './journal/Journal';
+import Shuffle from './shuffle/Shuffle';
+import Search from './search/Search';
 import { BrowserRouter, NavLink, Outlet, Route, Routes } from 'react-router-dom';
 
 function Header() {

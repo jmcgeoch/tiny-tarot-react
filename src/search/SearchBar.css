@@ -1,11 +1,10 @@
 .searchBar {
     display: flex;
-    /* flex-grow: 2; */
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-end;
     margin-top: 0;
     margin-bottom: 0;
-    /* width: 80vw; */
 }
 
 .searchInput {
@@ -16,4 +15,10 @@
     border-radius: 20px;
     border: 1px solid #ccc;
     box-sizing: content-box;
+}
+
+.closeIcon {
+    position: absolute;
+    padding-top: 15px;
+    padding-right: 15px;
 }

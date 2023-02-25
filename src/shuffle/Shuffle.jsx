@@ -1,12 +1,12 @@
 import './Shuffle.css';
-import Card from './Card.jsx';
-import SpreadPicker from './shuffle/SpreadPicker';
+import Card from '../Card.jsx';
+import SpreadPicker from './SpreadPicker';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { file, shuffle, settings } from './resources/icons/iconIndex';
-import TarotLibrary from './tarot_library'
-import CardSpreadOptions from './card_spread_options'
+import { file, shuffle, settings } from '../resources/icons/iconIndex';
+import TarotLibrary from '../tarot_library'
+import CardSpreadOptions from '../card_spread_options'
 
 export default function Shuffle() {
     const [numberOfCards, setNumberOfCards] = useState(3);

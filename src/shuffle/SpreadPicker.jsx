@@ -25,10 +25,8 @@ export default function SpreadPicker({ spreadList, save }) {
                         <div className='listRow'>
                             <div className='check'>
                                 {
-                                    (chosenSpread[number] === index) ?
+                                    (chosenSpread[number] === index) &&
                                         <FontAwesomeIcon icon={faCheck} />
-                                        :
-                                        <></>
                                 }
                             </div>
                             <button className='listItem' 

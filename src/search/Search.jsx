@@ -1,10 +1,10 @@
 import React from 'react';
 import './Search.css';
-import Card from './Card';
-import SearchBar from './search/SearchBar';
-import TarotLibrary from './tarot_library'
+import Card from '../Card';
+import SearchBar from '../search/SearchBar';
+import TarotLibrary from '../tarot_library'
 import { useState } from 'react';
-import { majorArcana, wands, cups, swords, pentacles, search } from './resources/icons/iconIndex';
+import { majorArcana, wands, cups, swords, pentacles, search } from '../resources/icons/iconIndex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -51,6 +51,7 @@ export default function Search() {
 
     const onSearchClick = () => {
         setShowSearch(true);
+        setKeyword('');
         setCardData(TarotLibrary);
     };
 
