@@ -92,7 +92,6 @@ p {
 .fullCard {
     display: flex;
     flex-direction: row;
-    /* width: 100%; */
     height: 100%;
 }
 
@@ -129,6 +128,15 @@ p {
 
 .shrink {
     height: auto;
+}
+
+.small {
+    border-radius: 0;
+    height: 100px;
+}
+
+.smallCardContainer {
+    margin-right: 5px;
 }
 
 div.infoColumn.meaningsContainer {

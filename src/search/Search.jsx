@@ -101,7 +101,7 @@ export default function Search() {
                         <div className='cardWrapper' onClick={() => { onOpenDetails(card) }}>
                             <Card cardProfile={card}
                                 flipped={true}
-                                style='title'
+                                style='image'
                                 key={index + card.name}
                             />
                         </div>

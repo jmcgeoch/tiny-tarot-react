@@ -1,0 +1,51 @@
+[
+  {
+    "dateTime": "Dec 17 1995",
+    "cards": [12, 45, 23],
+    "cardPositions": ["Past", "Present", "Future"],
+    "tags": ["Pisces", "3 Card", "New Moon", "bad day"],
+    "userEntry": "Today I went to the supermarket and saw my favorite vegetable there and it reminded me of the small things in life. Feeling like the world is okay."
+  },
+  {
+    "dateTime": "Apr 7 1995",
+    "cards": [3],
+    "cardPositions": ["General Advice"],
+    "tags": ["1 Card", "New Moon"],
+    "userEntry": ""
+  },
+  {
+    "dateTime": "Nov 23 1994",
+    "cards": [33, 77],
+    "cardPositions": ["Pros", "Cons"],
+    "tags": ["2 Card", "New Moon"],
+    "userEntry": ""
+  },
+  {
+    "dateTime": "Nov 6 1994",
+    "cards": [16, 55],
+    "cardPositions": ["Pros", "Cons"],
+    "tags": ["2 Card", "New Moon"],
+    "userEntry": ""
+  },
+  {
+    "dateTime": "Oct 31 1994",
+    "cards": [66, 65],
+    "cardPositions": ["Pros", "Cons"],
+    "tags": ["2 Card", "New Moon"],
+    "userEntry": ""
+  },
+  {
+    "dateTime": "Oct 13 1994",
+    "cards": [49, 36],
+    "cardPositions": ["Pros", "Cons"],
+    "tags": ["2 Card", "New Moon"],
+    "userEntry": ""
+  },
+  {
+    "dateTime": "Sep 21 1994",
+    "cards": [8, 0],
+    "cardPositions": ["Pros", "Cons"],
+    "tags": ["2 Card", "New Moon"],
+    "userEntry": ""
+  }
+]

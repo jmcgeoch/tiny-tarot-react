@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poiret+One&display=swap');
+
+.entriesContainer {
+    background-color: white;
+    margin: 15px 15px 15px 30px;
+    border-radius: 25px;
+    max-width: 325px;
+    width: 325px;
+    height: 90%;
+    overflow: auto;
+}
+
+.noEntries {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    max-width: 200px;
+    margin: 10px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    width: auto;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.prettyDate {
+    color: #303030;
+    font-family: 'Cutive Mono', monospace;
+    font-size: calc(2vmin);
+    padding-bottom: 3px;
+}
+
+.divider {
+    border-bottom: 1px solid lightgray;
+    width: 70%;
+    position: relative;
+    align-self: center;
+}
+
+.entriesContainer::-webkit-scrollbar {
+    width: 10px;
+    /* width of the entire scrollbar */
+}
+
+.entriesContainer::-webkit-scrollbar-track {
+    background: lavender;
+    /* color of the tracking area */
+}
+
+.entriesContainer::-webkit-scrollbar-thumb {
+    background-color: purple;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+}

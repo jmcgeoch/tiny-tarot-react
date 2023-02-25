@@ -7,8 +7,8 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 /** 
  * Styles
  * --full: use for full page card descriptions
- * --brief: used for quick shuffle
- * --title: used for laying out lists
+ * --brief: used for quick shuffle with keywords
+ * --image: used for laying out lists
 */
 
 export default function Card({ cardProfile, flipped, style = 'brief', close }) {
@@ -63,7 +63,7 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
                                 <span className='fact'><h4>Number</h4><p>{cardProfile.number}</p></span>
                                 <span className='fact'><h4>Element</h4><p>{cardProfile.elemental}</p></span>
                                 <span className='fact'><h4>Astrology</h4><p>{cardProfile.astrology}</p></span>
-                                { (cardProfile.hebrew) && <span className='fact'><h4>Hebrew</h4><p>{cardProfile.hebrew}</p></span> }
+                                {(cardProfile.hebrew) && <span className='fact'><h4>Hebrew</h4><p>{cardProfile.hebrew}</p></span>}
                             </div>
                             <div className='infoColumn compact'>
                                 {
@@ -112,10 +112,16 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
 
     if (flipped && style === 'brief') {
         return <KeywordCard />
-    } else if (style === 'title') {
+    } else if (style === 'image') {
         return <CardImage />
     } else if (style === 'full') {
         return <FullCard />
+    } else if (style === 'small') {
+        return (
+            <div className='smallCardContainer'>
+                <img src={image} className='small' alt={name} title={name} />
+            </div>
+        )
     } else {
         return (
             <div className="Card">
