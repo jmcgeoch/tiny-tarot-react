@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poiret+One&display=swap');
 
 .entriesContainer {
-    background-color: white;
+    background-color: lavender;
     margin: 15px 15px 15px 30px;
-    border-radius: 25px;
     max-width: 325px;
     width: 325px;
     height: 90%;
@@ -17,12 +16,15 @@
 }
 
 .entry {
+    background-color: white;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
     max-width: 200px;
     margin: 10px;
+    padding: 10px;
 }
 
 .cards {

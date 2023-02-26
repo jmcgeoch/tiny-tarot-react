@@ -5,17 +5,26 @@ import ExampleEntries from '../example_journal_entries.json'
 import { useState } from 'react'
 
 export default function Journal() {
-    const [entries, setEntries] = useState([]);
-    const [currentEntry, setCurrentEntry] = useState(ExampleEntries[0]);
+    const [entries, setEntries] = useState(ExampleEntries);
+    const [currentEntry, setCurrentEntry] = useState(entries[0]);
+    const [loading, setLoading] = useState(false);
+
+    function getEntries() {
+        const fetchedEntries = localStorage.getItem('entries');
+        if (fetchedEntries) {
+            return fetchedEntries;
+        } else {
+            return [];
+        }
+    }
 
     const openEntry = (entry) => {
         setCurrentEntry(entry);
-        console.log(entry)
     }
 
     return(
         <div className='Journal-body'>
-            <Entries entries={ExampleEntries} openEntry={openEntry}/>
+            <Entries entries={entries} openEntry={openEntry}/>
             <JournalPage entry={currentEntry} />
         </div>
     )

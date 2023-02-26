@@ -31,30 +31,35 @@ export default function JournalPage({ entry }) {
             {
                 entry &&
                 <>
-                    <p className='date'><b>{entry.dateTime}</b></p>
-                    <div className='spreadContainer'>
+                    <div className='journalSpreadContainer'>
                         {
                             entry.cards.map((card, index) => (
                                 <span className='entryCard'>
                                     <h1 className='positionName'>{entry.cardPositions[index]}</h1>
                                     <span onClick={() => { }}>
-                                        <Card cardProfile={TarotLibrary[card]} 
-                                        flipped={true} 
-                                        style={'image'} 
+                                        <Card cardProfile={TarotLibrary[card]}
+                                            flipped={true}
+                                            style={'image'}
                                         />
                                     </span>
                                 </span>
                             ))
                         }
+                        <div className='journalInfo'>
+                            <p className='date'><b>{entry.dateTime}</b></p>
+                            <br />
+                            {
+                                entry.tags &&
+                                <span className='chips'><Chips tags={entry.tags} /></span>
+                            }
+                            {
+                                entry.userEntry &&
+                                <p>{entry.userEntry}</p>
+                            }
+                        </div>
+                        
                     </div>
-                    {
-                        entry.tags &&
-                        <Chips tags={entry.tags} />
-                    }
-                    {
-                        entry.userEntry &&
-                        <p>{entry.userEntry}</p>
-                    }
+
                 </>
             }
         </div>

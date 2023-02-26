@@ -1,6 +1,7 @@
 .page {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: white;
     margin: 15px 30px 15px 15px;
     padding: 0 25px;
@@ -27,7 +28,7 @@
 }
 
 .entryCard {
-    max-width: 150px;
+    max-width: 200px;
 }
 .date {
     color: #303030;
@@ -38,11 +39,20 @@
     color: purple;
 }
 
-.spreadContainer {
-    justify-content: space-around !important;
-    height: fit-content !important;
+.journalSpreadContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-h1 {
-    font-size: 18px;
+.journalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+
+.chips {
+    display: flex;
+    justify-content: center;
 }

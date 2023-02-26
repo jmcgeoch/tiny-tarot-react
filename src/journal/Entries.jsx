@@ -46,7 +46,6 @@ export default function Entries({ entries, openEntry }) {
                     <div className='entry' onClick={() => { openEntry(entry) }}>
                         <PrettyDateTime rawDate={entry.dateTime} />
                         <MiniCards entry={entry} />
-                        <div className='divider'></div>
                     </div>
                 ))
             }
