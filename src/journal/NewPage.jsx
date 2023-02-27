@@ -1,5 +1,5 @@
 
-export default function NewPage({ cards, currentSpread }) {
+export default function NewPage({ cards, currentSpread, close }) {
 
     return (
         <div>

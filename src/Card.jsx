@@ -31,7 +31,7 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
     function KeywordCard() {
         return (
             <div className="Card">
-                <h1>{name}</h1>
+                <h2>{name}</h2>
                 <img src={image} alt={name} title={name} />
                 <p className='briefKeywords'><b>Keywords:</b> {keywords.join(", ")}</p>
             </div>

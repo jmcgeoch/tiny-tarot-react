@@ -4,6 +4,11 @@ import TarotLibrary from '../tarot_library.json';
 
 export default function Entries({ entries, openEntry }) {
 
+    function selectEntry(entry) {
+        openEntry(entry);
+        //conditionally set some css to show selected
+    }
+
     function PrettyDateTime({ rawDate }) {
         // const prettyDate = (new Date(rawDate * 1000)).toLocaleDateString();
 
@@ -43,7 +48,7 @@ export default function Entries({ entries, openEntry }) {
             }
             {
                 entries.map((entry, index) => (
-                    <div className='entry' onClick={() => { openEntry(entry) }}>
+                    <div className='entry' onClick={() => { selectEntry(entry) }}>
                         <PrettyDateTime rawDate={entry.dateTime} />
                         <MiniCards entry={entry} />
                     </div>

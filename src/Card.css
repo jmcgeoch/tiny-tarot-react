@@ -4,14 +4,14 @@
 }
 
 h1 {
-    size: 24px;
+    size: calc(3vmin);
     font-family: 'Poiret One', cursive;
     text-align: center;
     margin-top: 0;
 }
 
 h2 {
-    size: 20px;
+    size: calc(2.2vmin);
     font-family: 'Poiret One', cursive;
     text-align: center;
     margin-top: 0;

@@ -1,13 +1,15 @@
 import './Journal.css';
-import Entries from './Entries'
-import JournalPage from './JournalPage'
-import ExampleEntries from '../example_journal_entries.json'
-import { useState } from 'react'
+import Entries from './Entries';
+import JournalPage from './JournalPage';
+import NewPage from './NewPage';
+import ExampleEntries from '../example_journal_entries.json';
+import { useState } from 'react';
 
-export default function Journal() {
-    const [entries, setEntries] = useState(ExampleEntries);
-    const [currentEntry, setCurrentEntry] = useState(entries[0]);
+export default function Journal({ createNewPage = false }) {
+    const [entries, setEntries] = useState([]);
+    const [currentEntry, setCurrentEntry] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [newPage, setNewPage] = useState(createNewPage)
 
     function getEntries() {
         const fetchedEntries = localStorage.getItem('entries');
@@ -22,10 +24,15 @@ export default function Journal() {
         setCurrentEntry(entry);
     }
 
+    const closeNewPage = () => {
+        setNewPage(false);
+    }
+
     return(
         <div className='Journal-body'>
             <Entries entries={entries} openEntry={openEntry}/>
-            <JournalPage entry={currentEntry} />
+            { !newPage && <JournalPage entry={currentEntry} /> }
+            { newPage && <NewPage close={closeNewPage} />}
         </div>
     )
 }

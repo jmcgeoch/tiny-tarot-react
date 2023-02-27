@@ -7,6 +7,8 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import { file, shuffle, settings } from '../resources/icons/iconIndex';
 import TarotLibrary from '../tarot_library'
 import CardSpreadOptions from '../card_spread_options'
+import Dialog from '@mui/material/Dialog';
+import { useNavigate } from 'react-router-dom';
 
 export default function Shuffle() {
     const [numberOfCards, setNumberOfCards] = useState(3);
@@ -14,6 +16,7 @@ export default function Shuffle() {
     const [cards, setCards] = useState(chooseThreeCards);
     const [cardStyle, setCardStyle] = useState('brief')
     const [modalVisible, setModalVisible] = useState(false);
+    const [dialogVisible, setDialogVisible] = useState(false);
     const [selectedCard, setSelectedCard] = useState({});
     const [frozen, setFrozen] = useState(false);
     const [currentSpread, setCurrentSpread] = useState(CardSpreadOptions[numberOfCards - 1]);
@@ -78,14 +81,22 @@ export default function Shuffle() {
         setModalVisible(false);
     };
 
+    const navigate = useNavigate()
+
     function onSave(spreadList) {
         setSelectedSpreads(spreadList);
+        setEditSpread(false);
+    }
+
+    function onReadingSave() {
+        setDialogVisible(false);
+        navigate('/journal');
     }
 
     function ShuffleContainer() {
         if (editSpread) {
             return (
-                <SpreadPicker spreadList={selectedSpreads} save={onSave}/>
+                <SpreadPicker spreadList={selectedSpreads} save={onSave} />
             )
         } else {
             return (
@@ -126,6 +137,30 @@ export default function Shuffle() {
         )
     }
 
+    //fix this state issue
+    function SaveIcon({ flipped }) {
+        const spreadFlip = flipped.slice(0, numberOfCards - 1);
+
+        if (spreadFlip.includes(false)) {
+            return (
+                <img src={file}
+                    className='icon inactiveIcon'
+                    alt='Save'
+                    title='Save'
+                />
+            )
+        } else {
+            return (
+                <img src={file}
+                    className='icon'
+                    onClick={() => { setDialogVisible(true) }}
+                    alt='Save'
+                    title='Save'
+                />
+            )
+        }
+    }
+
     return (
         <div className="App-body">
             {
@@ -144,12 +179,7 @@ export default function Shuffle() {
                                 alt='Shuffle'
                                 title='Shuffle'
                             />
-                            <img src={file}
-                                className='icon'
-                                onClick={() => { }}
-                                alt='Save'
-                                title='Save'
-                            />
+                            <SaveIcon flipped={isFlipped}/>
                             <img src={settings}
                                 className='icon'
                                 onClick={() => { setEditSpread(true) }}
@@ -159,6 +189,18 @@ export default function Shuffle() {
                         </div>
                         <div className='vertDivider'></div>
                         <ShuffleContainer />
+                        <Dialog open={dialogVisible}>
+                            <div className='dialog'>
+                                <p>Do you want to save this reading?</p>
+                                <button onClick={() => { onReadingSave() }}
+                                style={{marginRight: 10}}>
+                                    Yes
+                                </button>
+                                <button onClick={() => {setDialogVisible(false)}}>
+                                    No
+                                </button>
+                            </div>
+                        </Dialog>
                     </div>
             }
         </div>

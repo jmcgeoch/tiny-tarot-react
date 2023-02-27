@@ -39,7 +39,7 @@ export default function JournalPage({ entry }) {
                                     <span onClick={() => { }}>
                                         <Card cardProfile={TarotLibrary[card]}
                                             flipped={true}
-                                            style={'image'}
+                                            style={'brief'}
                                         />
                                     </span>
                                 </span>

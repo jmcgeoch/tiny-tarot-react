@@ -55,6 +55,15 @@
     padding: 10px;
 }
 
+.MuiPaper-root {
+    border-radius: 25px !important;
+}
+
+.dialog {
+    margin: 25px;
+    text-align: center;
+}
+
 .spreadContainer {
     display: flex;
     flex-direction: row;
@@ -68,4 +77,8 @@
     border-left: 1px solid gray;
     height: 40vh;
     position: relative;
+}
+
+.inactiveIcon {
+    filter: invert(62%) sepia(0%) saturate(1803%) hue-rotate(138deg) brightness(81%) contrast(87%);
 }
