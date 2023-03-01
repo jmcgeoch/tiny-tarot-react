@@ -2,20 +2,27 @@ import './NewPage.css';
 import Palette from '../resources/MuiPalette';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material';
-import Card from '../Card';
+import Card from '../cards/Card';
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import TextField from '@mui/material/TextField';
 
 export default function NewPage() {
 
     const { state } = useLocation();
+    const navigate = useNavigate();
     const journalCards = state.cards;
     const journalSpread = state.spread;
+    let jsonJournalEntry = {};
 
     function prettyDateTime() {
         const now = new Date();
         const monthName = new Intl.DateTimeFormat("en-US", { month: 'long' }).format(now);
         return (monthName + ' ' + now.getDate() + ' ' + now.getFullYear());
+    }
+
+    function cancelNewPage() {
+        navigate(-1);
     }
 
     return (
@@ -44,7 +51,7 @@ export default function NewPage() {
                     <button style={{marginRight: 10}}>
                         Save
                     </button>
-                    <button>
+                    <button onClick={() => { cancelNewPage() }}>
                         Cancel
                     </button>
                 </div>

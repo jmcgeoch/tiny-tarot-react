@@ -1,6 +1,6 @@
 import React from 'react';
 import './Search.css';
-import Card from '../Card';
+import Card from '../cards/Card';
 import SearchBar from '../search/SearchBar';
 import TarotLibrary from '../tarot_library'
 import { useState } from 'react';

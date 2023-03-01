@@ -1,5 +1,5 @@
 import './JournalPage.css';
-import Card from '../Card';
+import Card from '../cards/Card';
 import Chips from './Chips';
 import { NavLink } from 'react-router-dom';
 import TarotLibrary from '../tarot_library.json';

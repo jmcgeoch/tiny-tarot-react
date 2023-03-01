@@ -1,6 +1,6 @@
 import './Card.css';
-import CardImages from './resources/cards/cardImageIndex';
-import { cardBack } from './resources/rootIndex';
+import CardImages from '../resources/cards/cardImageIndex';
+import { cardBack } from '../resources/rootIndex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 

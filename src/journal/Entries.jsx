@@ -1,5 +1,5 @@
 import './Entries.css';
-import Card from '../Card';
+import Card from '../cards/Card';
 import TarotLibrary from '../tarot_library.json';
 
 export default function Entries({ entries, openEntry }) {

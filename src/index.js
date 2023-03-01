@@ -7,6 +7,8 @@ import NewPage from './journal/NewPage';
 import Shuffle from './shuffle/Shuffle';
 import ErrorPage from './ErrorPage';
 import Search from './search/Search';
+import Settings from './Settings';
+import CardProfile from './cards/CardProfile';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -20,27 +22,35 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        element: <Shuffle />,
-        index: true
-      },
-      {
-        path: 'shuffle',
-        element: <Shuffle />
-      },
-      {
-        path: 'journal',
-        element: <Journal />
-      },
-      {
-        path: 'search',
-        element: <Search />
-      },
-      {
-        path: 'newPage',
-        element: <NewPage />
-      }
+    children: [{
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          element: <Shuffle />,
+          index: true
+        },
+        {
+          path: 'journal',
+          element: <Journal />
+        },
+        {
+          path: 'search',
+          element: <Search />
+        },
+        {
+          path: 'newPage',
+          element: <NewPage />
+        },
+        {
+          path: 'settings',
+          element: <Settings />
+        },
+        {
+          path: 'cards/:img',
+          element: <CardProfile />
+        }
+      ]
+    }
     ]
   }
 ]);

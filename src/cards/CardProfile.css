@@ -1,0 +1,8 @@
+.cardModal {
+    display: flex;
+    align-self: normal;
+    background-color: white;
+    margin: 20px;
+    border-radius: 25px;
+    padding: 10px;
+}

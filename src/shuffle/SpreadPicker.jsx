@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
-export default function SpreadPicker({ spreadList, save }) {
+export default function SpreadPicker({ spreadList, save, close }) {
     const [chosenSpread, setChosenSpread] = useState(spreadList);
     const [updated, setUpdated] = useState(false);
 
@@ -63,8 +63,12 @@ export default function SpreadPicker({ spreadList, save }) {
             </div>
             <div>
                 <button className={` ${!updated ? 'inactive' : ''}`}
+                        style={{marginRight: 10}}
                         onClick={() => {save(chosenSpread)}}>
                         <b>Save</b>
+                </button>
+                <button onClick={() => close()}>
+                    <b>Cancel</b>
                 </button>
             </div>
         </div>
