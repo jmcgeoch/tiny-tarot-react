@@ -5,13 +5,14 @@ import NewPage from './NewPage';
 import ExampleEntries from '../example_journal_entries.json';
 import { useState } from 'react';
 
-export default function Journal({ createNewPage = false }) {
-    const [entries, setEntries] = useState([]);
-    const [currentEntry, setCurrentEntry] = useState(null);
+export default function Journal() {
+    const [entries, setEntries] = useState(ExampleEntries);
+    const [currentEntry, setCurrentEntry] = useState(ExampleEntries[0]);
     const [loading, setLoading] = useState(false);
-    const [newPage, setNewPage] = useState(createNewPage)
 
     function getEntries() {
+
+        //wrap in useEffect and add loading state + icon
         const fetchedEntries = localStorage.getItem('entries');
         if (fetchedEntries) {
             return fetchedEntries;
@@ -24,15 +25,10 @@ export default function Journal({ createNewPage = false }) {
         setCurrentEntry(entry);
     }
 
-    const closeNewPage = () => {
-        setNewPage(false);
-    }
-
     return(
         <div className='Journal-body'>
             <Entries entries={entries} openEntry={openEntry}/>
-            { !newPage && <JournalPage entry={currentEntry} /> }
-            { newPage && <NewPage close={closeNewPage} />}
+            <JournalPage entry={currentEntry} />
         </div>
     )
 }

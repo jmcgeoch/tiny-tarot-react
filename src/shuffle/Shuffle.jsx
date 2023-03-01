@@ -90,7 +90,9 @@ export default function Shuffle() {
 
     function onReadingSave() {
         setDialogVisible(false);
-        navigate('/journal');
+        const savedCards = cards.slice(0, numberOfCards);
+        const savedSpread = currentSpread[selectedSpreads[numberOfCards - 1]];
+        navigate('/newPage', { state: {cards: savedCards, spread: savedSpread} });
     }
 
     function ShuffleContainer() {
@@ -104,12 +106,14 @@ export default function Shuffle() {
                     <span style={frozen ? { color: 'gray' } : {}}>
                         <FontAwesomeIcon icon={faChevronLeft}
                             className='chevron'
+                            size='xl'
                             onClick={() => { changeNumberOfCards(-1) }} />
                     </span>
                     <ShuffleSpread />
                     <span style={frozen ? { color: 'gray' } : {}}>
                         <FontAwesomeIcon icon={faChevronRight}
                             className='chevron'
+                            size='xl'
                             onClick={() => { changeNumberOfCards(1) }} />
                     </span>
                 </>

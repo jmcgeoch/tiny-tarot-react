@@ -76,6 +76,7 @@ export default function Search() {
                     <div>
                         <FontAwesomeIcon icon={faChevronLeft}
                             className='chevron'
+                            size='xl'
                             onClick={() => { getNextCard(-1) }} />
                     </div>
                     <div className='cardsContainer full'>
@@ -88,6 +89,7 @@ export default function Search() {
                     <div>
                         <FontAwesomeIcon icon={faChevronRight}
                             className='chevron'
+                            size='xl'
                             onClick={() => { getNextCard(1) }} />
                     </div>
                 </div>

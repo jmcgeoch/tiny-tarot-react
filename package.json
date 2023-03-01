@@ -29,7 +29,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/style-prop-object": "0"
+    }
   },
   "browserslist": {
     "production": [
