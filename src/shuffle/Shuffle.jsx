@@ -1,10 +1,9 @@
 import './Shuffle.css';
 import Card from '../cards/Card';
-import SpreadPicker from './SpreadPicker';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { file, shuffle, settings } from '../resources/icons/iconIndex';
+import { file, shuffle } from '../resources/icons/iconIndex';
 import TarotLibrary from '../tarot_library'
 import CardSpreadOptions from '../card_spread_options'
 import Dialog from '@mui/material/Dialog';
@@ -14,13 +13,15 @@ export default function Shuffle() {
     const [numberOfCards, setNumberOfCards] = useState(3);
     const [isFlipped, setIsFlipped] = useState([false, false, false]);
     const [cards, setCards] = useState(chooseThreeCards);
-    const [cardStyle, setCardStyle] = useState('brief')
     const [dialogVisible, setDialogVisible] = useState(false);
-    const [selectedCard, setSelectedCard] = useState({});
     const [frozen, setFrozen] = useState(false);
     const [spreadCategory, setSpreadCategory] = useState(CardSpreadOptions[numberOfCards - 1]);
     const [selectedSpreads, setSelectedSpreads] = useState([0, 0, 0]);
     const navigate = useNavigate()
+
+    let spreadOption = selectedSpreads[numberOfCards - 1];
+    const spreadFlip = isFlipped.slice(0, numberOfCards);
+    const inactive = spreadFlip.includes(false);
 
     function chooseThreeCards() {
         let counter = 0;
@@ -61,7 +62,6 @@ export default function Shuffle() {
         // checks if this card is already flipped
         if (isFlipped[position] === true) {
             const card = cards[position];
-            setSelectedCard(card);
             navigate(`cards/${card.img}`, { state: { card: card } });
         }
         setIsFlipped(newFlippedMap);
@@ -80,11 +80,26 @@ export default function Shuffle() {
         navigate('/newPage', { state: { cards: savedCards, spread: savedSpread } });
     }
 
-    function ShuffleContainer() {
-        let spreadOption = selectedSpreads[numberOfCards - 1];
-
-        return (
-            <>
+    return (
+        <div className="App-body">
+            <div className='spreadContainer'>
+                <div className='iconNavigation'>
+                    <img src={shuffle}
+                        className='icon'
+                        onClick={() => { shuffleCards() }}
+                        alt='Shuffle'
+                        title='Shuffle'
+                    />
+                    <span className={ inactive ? `inactiveIcon` : ``}>
+                        <img src={file}
+                            className='icon'
+                            onClick={() => { if (!inactive) setDialogVisible(true) }}
+                            alt='Save'
+                            title='Save'
+                        />
+                    </span>
+                </div>
+                <div className='vertDivider'></div>
                 <span style={frozen ? { color: 'gray' } : {}}>
                     <FontAwesomeIcon icon={faChevronLeft}
                         className='chevron'
@@ -94,14 +109,14 @@ export default function Shuffle() {
                 <div className='spreadContainer'>
                     {cards.map((card, index) => (
                         (index < numberOfCards) ?
-                            <span className='cardContainer'>
+                            <span className='cardContainer' key={card.name + index}>
                                 <h1 className='positionName'>
                                     {spreadCategory[spreadOption][index]}
                                 </h1>
                                 <span onClick={() => { updateFlip(index) }}>
                                     <Card cardProfile={card}
                                         flipped={isFlipped[index]}
-                                        style={cardStyle} />
+                                        style='brief' />
                                 </span>
                             </span>
                             :
@@ -114,54 +129,6 @@ export default function Shuffle() {
                         size='xl'
                         onClick={() => { changeNumberOfCards(1) }} />
                 </span>
-            </>
-        )
-    }
-
-    //fix this state issue
-    function SaveIcon({ flipped }) {
-        const spreadFlip = flipped.slice(0, numberOfCards - 1);
-
-        if (spreadFlip.includes(false)) {
-            return (
-                <img src={file}
-                    className='icon inactiveIcon'
-                    alt='Save'
-                    title='Save'
-                />
-            )
-        } else {
-            return (
-                <img src={file}
-                    className='icon'
-                    onClick={() => { setDialogVisible(true) }}
-                    alt='Save'
-                    title='Save'
-                />
-            )
-        }
-    }
-
-    return (
-        <div className="App-body">
-            <div className='spreadContainer'>
-                <div className='iconNavigation'>
-                    <img src={shuffle}
-                        className='icon'
-                        onClick={() => { shuffleCards() }}
-                        alt='Shuffle'
-                        title='Shuffle'
-                    />
-                    <SaveIcon flipped={isFlipped} />
-                    <img src={settings}
-                        className='icon'
-                        // onClick={() => { setEditSpread(true) }}
-                        alt='Settings'
-                        title='Settings'
-                    />
-                </div>
-                <div className='vertDivider'></div>
-                <ShuffleContainer />
                 <Dialog open={dialogVisible}>
                     <div className='dialog'>
                         <p>Do you want to save this reading?</p>

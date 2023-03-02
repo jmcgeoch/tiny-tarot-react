@@ -1,13 +1,12 @@
 import './Journal.css';
 import Entries from './Entries';
 import JournalPage from './JournalPage';
-import NewPage from './NewPage';
 import ExampleEntries from '../example_journal_entries.json';
 import { useState } from 'react';
 
 export default function Journal() {
-    const [entries, setEntries] = useState(ExampleEntries);
-    const [currentEntry, setCurrentEntry] = useState(ExampleEntries[0]);
+    const [entries, setEntries] = useState(getEntries);
+    const [currentEntry, setCurrentEntry] = useState(null);
     const [loading, setLoading] = useState(false);
 
     function getEntries() {

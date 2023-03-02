@@ -7,9 +7,8 @@ import NewPage from './journal/NewPage';
 import Shuffle from './shuffle/Shuffle';
 import ErrorPage from './ErrorPage';
 import Search from './search/Search';
-import Settings from './Settings';
+import Settings from './settings/Settings';
 import CardProfile from './cards/CardProfile';
-import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -21,7 +20,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />,
     children: [{
       errorElement: <ErrorPage />,
       children: [
@@ -64,4 +62,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

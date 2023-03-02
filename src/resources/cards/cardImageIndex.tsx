@@ -81,8 +81,8 @@ import majorArcana19 from './m19.jpg';
 import majorArcana20 from './m20.jpg';
 import majorArcana21 from './m21.jpg';
 
-export default {
-    cup1,
+const imageIndex = {
+    'cup1': cup1,
     'cup2': cup2,
     'cup3': cup3,
     'cup4': cup4,
@@ -161,3 +161,5 @@ export default {
     'majorArcana20': majorArcana20,
     'majorArcana21': majorArcana21,
 };
+
+export default imageIndex;

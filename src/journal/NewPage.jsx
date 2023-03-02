@@ -1,10 +1,9 @@
 import './NewPage.css';
-import Palette from '../resources/MuiPalette';
-import Button from '@mui/material/Button';
+import Palette from '../resources/MuiPalette.tsx';
 import { ThemeProvider } from '@mui/material';
 import Card from '../cards/Card';
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import ChipInput from './ChipInput';
+import { useLocation, useNavigate } from "react-router-dom";
 import TextField from '@mui/material/TextField';
 
 export default function NewPage() {
@@ -30,7 +29,7 @@ export default function NewPage() {
             <div className='cards' style={{ maxHeight: 'none' }}>
                 {
                     journalCards.map((card, index) => (
-                        <span className='entryCard'>
+                        <span className='entryCard' key={card.name + index}>
                             <h1 className='positionName'>{journalSpread[index]}</h1>
                             <Card cardProfile={card}
                                 flipped={true}
@@ -43,6 +42,7 @@ export default function NewPage() {
                 <p className='date'><b>{prettyDateTime()}</b></p>
                 <br />
                 <ThemeProvider theme={Palette} >
+                    <ChipInput />
                     <TextField id="outlined-basic" variant="outlined"
                         placeholder='Journal Entry' multiline={true} minRows={4} />
                 </ThemeProvider>

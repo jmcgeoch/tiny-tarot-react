@@ -20,6 +20,7 @@ h2 {
 
 h4 {
     text-align: center;
+    font-size: calc(2.5vmin);
     margin-bottom: 0;
     margin-top: 0;
 }
@@ -34,6 +35,7 @@ img {
 }
 
 li {
+    text-align: left;
     margin: 5px 0 5px 0;
     list-style-type: circle;
     color: #303030;
@@ -146,5 +148,5 @@ div.infoColumn.meaningsContainer {
 .cardBack {
     margin-top: 54px;
     margin-left: auto;
-  margin-right: auto;
+    margin-right: auto;
 }
