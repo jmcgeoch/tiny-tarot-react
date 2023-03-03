@@ -34,16 +34,6 @@
     font-size: 2vmin;
 }
 
-button {
-    width: 150px;
-    height:  40px;
-    border-radius: 25px;
-    border: 1px solid purple;
-    background-color: white;
-    font-family: 'Poiret One', cursive;
-    font-size: 20px;
-}
-
 .inactive {
     background-color: #f5f5f5;
     color: gray;

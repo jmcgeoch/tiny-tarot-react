@@ -26,11 +26,11 @@ export default function SpreadPicker({ spreadList, save, close }) {
                             <div className='check'>
                                 {
                                     (chosenSpread[number] === index) &&
-                                        <FontAwesomeIcon icon={faCheck} />
+                                    <FontAwesomeIcon icon={faCheck} />
                                 }
                             </div>
-                            <button className='listItem' 
-                                    onClick={() => { updateSpread(number, index) }}>
+                            <button className='listItem action-button'
+                                onClick={() => { updateSpread(number, index) }}>
                                 {
                                     <span>{value.join(' • ')} </span>
                                 }
@@ -62,12 +62,13 @@ export default function SpreadPicker({ spreadList, save, close }) {
                 </div>
             </div>
             <div>
-                <button className={` ${!updated ? 'inactive' : ''}`}
-                        style={{marginRight: 10}}
-                        onClick={() => {save(chosenSpread)}}>
-                        <b>Save</b>
+                <button className={`action-button ${!updated ? 'inactive' : ''}`}
+                    style={{ marginRight: 10 }}
+                    onClick={() => { save(chosenSpread) }}>
+                    <b>Save</b>
                 </button>
-                <button onClick={() => close()}>
+                <button className='action-button'
+                    onClick={() => close()}>
                     <b>Cancel</b>
                 </button>
             </div>

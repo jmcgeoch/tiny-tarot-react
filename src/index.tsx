@@ -9,6 +9,7 @@ import ErrorPage from './ErrorPage';
 import Search from './search/Search';
 import Settings from './settings/Settings';
 import CardProfile from './cards/CardProfile';
+import reportWebVitals from './reportWebVitals.js';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -62,4 +63,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+reportWebVitals(console.log());

@@ -1,6 +1,9 @@
 .Card {
     margin: 10px;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
 }
 
 h1 {
@@ -69,6 +72,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    text-align: left;
 }
 
 .headerKeywords {

@@ -1,64 +1,98 @@
 import { useState } from 'react';
 import useAutocomplete from '@mui/base/useAutocomplete';
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import { createFilterOptions } from '@mui/material/Autocomplete';
 import Chip from '@mui/material/Chip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-const filter = createFilterOptions();
+const filter = createFilterOptions({
+    trim: true,
+    ignoreCase: true
+});
 
-export default function ChipInput() {
-    const {
-        getRootProps,
-        getInputLabelProps,
-        getInputProps,
-        getTagProps,
-        getListboxProps,
-        getOptionProps,
-        groupedOptions,
-        value,
-        focused,
-        setAnchorEl,
-    } = useAutocomplete({
-        id: 'customized-hook-demo',
-        defaultValue: [],
-        multiple: true,
-        options: basicTags,
-        getOptionLabel: (option) => option,
-    });
+export default function FreeSoloCreateOption() {
+    const [value, setValue] = useState([]);
+    const [chipData, setChipData] = useState([]);
+    
+      const handleDelete = (chipToDelete) => () => {
+        setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
+      };
 
     return (
-        <div>
-            <div {...getRootProps()}>
-                <div ref={setAnchorEl} className={focused ? 'focused' : ''}>
-                    {value.map((option, index) => (
-                        <Chip label={option} {...getTagProps({ index })} />
-                    ))}
+        <Autocomplete
+            value={value}
+            multiple={true}
+            onChange={(event, newValue) => {
+                if (typeof newValue === 'string') {
+                    setValue({
+                      title: newValue,
+                    });
+                  } else if (newValue && newValue.inputValue) {
+                    // Create a new value from the user input
+                    setValue({
+                      title: newValue.inputValue,
+                    });
+                  } else {
+                    setValue(newValue);
+                  }
+            }}
+            filterOptions={(options, params) => {
+                const filtered = filter(options, params);
 
-                    <input {...getInputProps()} />
-                </div>
-            </div>
-            {
-                groupedOptions.length > 0 ? (
-                    <ul {...getListboxProps()}>
-                        {groupedOptions.map((option, index) => (
-                            <li {...getOptionProps({ option, index })}>
-                                <span>{option}</span>
-                                <FontAwesomeIcon icon={faCheck} size={'sm'} />
-                            </li>
-                        ))}
-                    </ul>
-                )
-                    : null
-            }
-        </div>
+                const { inputValue } = params;
+                // Suggest the creation of a new value
+                const isExisting = options.some((option) => inputValue === option.title.toLowerCase());
+                if (inputValue !== '' && !isExisting) {
+                    filtered.push({
+                        inputValue,
+                        title: `Add "${inputValue}"`,
+                    });
+                }
+
+                return filtered;
+            }}
+            selectOnFocus
+            clearOnBlur
+            handleHomeEndKeys
+            options={basicTags}
+            getOptionLabel={(option) => {
+                // Value selected with enter, right from the input
+                if (typeof option === 'string') {
+                    return option;
+                }
+                // Add "xxx" option created dynamically
+                if (option.inputValue) {
+                    return option.inputValue;
+                }
+                // Regular option
+                return option.title;
+            }}
+            renderOption={(props, option) => <div {...props}><p>{option.title}</p></div>}
+            sx={{ width: '100%' }}
+            freeSolo
+            limitTags={2}
+            renderInput={(params) => (
+                <>
+                    {chipData.map((option, index) => (
+                        <Chip label={option.title} size={'small'}
+                        onDelete={handleDelete(option)}
+                        key={option.title} />
+                    ))}
+                    <TextField {...params} />
+                </>
+
+            )}
+        />
     );
 }
 
 const basicTags = [
-    '1 Card',
-    '2 Card',
-    '3 Card',
-
+    {title: '1 Card'},
+    {title: '2 Card'},
+    {title: '3 Card'},
+    {title: 'Full Moon'},
+    {title: 'New Moon'},
+    {title: 'First Quarter Moon'},
+    {title: 'Last Quarter Moon'},
 ]

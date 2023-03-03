@@ -10,12 +10,12 @@ function NoEntriesPage() {
             <h2>Uh-oh! Looks like there's no entries here...</h2>
             <br />
             <NavLink to='/' className='shuffleLink'>
-                <button>
+                <button className='action-button'>
                     Shuffle?
                 </button>
             </NavLink>
             <NavLink to='/' className='shuffleLink'>
-                <button>
+                <button className='action-button'>
                     Login
                 </button>
             </NavLink>

@@ -9,6 +9,7 @@
 
 p, li {
   font-family: 'Verdana', cursive;
+  font-size: calc(1.8vmin);
 }
 
 .headerNav {
@@ -41,4 +42,14 @@ a.navLink.active {
   color: black;
   text-decoration: none;
   margin-left: 50px;
+}
+
+.action-button {
+  width: 150px;
+  height:  40px;
+  border-radius: 25px;
+  border: 1px solid purple;
+  background-color: white;
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
 }

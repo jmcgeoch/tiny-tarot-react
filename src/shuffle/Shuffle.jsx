@@ -90,7 +90,7 @@ export default function Shuffle() {
                         alt='Shuffle'
                         title='Shuffle'
                     />
-                    <span className={ inactive ? `inactiveIcon` : ``}>
+                    <span className={inactive ? `inactiveIcon` : ``}>
                         <img src={file}
                             className='icon'
                             onClick={() => { if (!inactive) setDialogVisible(true) }}
@@ -106,10 +106,10 @@ export default function Shuffle() {
                         size='xl'
                         onClick={() => { changeNumberOfCards(-1) }} />
                 </span>
-                <div className='spreadContainer'>
-                    {cards.map((card, index) => (
+                {
+                    cards.map((card, index) => (
                         (index < numberOfCards) ?
-                            <span className='cardContainer' key={card.name + index}>
+                            <div className='cardContainer' key={card.name + index}>
                                 <h1 className='positionName'>
                                     {spreadCategory[spreadOption][index]}
                                 </h1>
@@ -118,11 +118,11 @@ export default function Shuffle() {
                                         flipped={isFlipped[index]}
                                         style='brief' />
                                 </span>
-                            </span>
+                            </div>
                             :
                             <></>
-                    ))}
-                </div>
+                    ))
+                }
                 <span style={frozen ? { color: 'gray' } : {}}>
                     <FontAwesomeIcon icon={faChevronRight}
                         className='chevron'
@@ -132,11 +132,13 @@ export default function Shuffle() {
                 <Dialog open={dialogVisible}>
                     <div className='dialog'>
                         <p>Do you want to save this reading?</p>
-                        <button onClick={() => { onReadingSave() }}
+                        <button className='action-button'
+                            onClick={() => { onReadingSave() }}
                             style={{ marginRight: 10 }}>
                             Yes
                         </button>
-                        <button onClick={() => { setDialogVisible(false) }}>
+                        <button className='action-button'
+                            onClick={() => { setDialogVisible(false) }}>
                             No
                         </button>
                     </div>
