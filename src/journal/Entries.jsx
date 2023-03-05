@@ -1,7 +1,7 @@
 import './Entries.css';
 import Card from '../cards/Card';
 import TarotLibrary from '../tarot_library.json';
-import { parseEntryDate } from './DateUtility.ts';
+import { parseEntryDate } from '../utilities/DateUtil.ts';
 
 export default function Entries({ entries, openEntry }) {
 

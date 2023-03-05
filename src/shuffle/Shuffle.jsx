@@ -8,7 +8,7 @@ import TarotLibrary from '../tarot_library'
 import CardSpreadOptions from '../card_spread_options'
 import Dialog from '@mui/material/Dialog';
 import { useNavigate } from 'react-router-dom';
-import { getSpreadChoices } from '../settings/SettingsUtil.ts';
+import { getSpreadChoices } from '../utilities/SettingsUtil.ts';
 
 export default function Shuffle() {
     const [numberOfCards, setNumberOfCards] = useState(3);

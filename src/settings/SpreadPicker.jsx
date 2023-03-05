@@ -3,7 +3,7 @@ import CardSpreadOptions from '../card_spread_options.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { getSpreadChoices } from './SettingsUtil.ts';
+import { getSpreadChoices } from '../utilities/SettingsUtil.ts';
 
 export default function SpreadPicker({ close }) {
     const [chosenSpread, setChosenSpread] = useState(getSpreadChoices);
