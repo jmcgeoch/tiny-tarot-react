@@ -5,7 +5,7 @@ import Card from '../cards/Card';
 import ChipInput from './ChipInput';
 import { useLocation, useNavigate } from "react-router-dom";
 import TextField from '@mui/material/TextField';
-import prettyDateTimeNow from './DateUtility.ts';
+import { prettyDateTimeNow } from './DateUtility.ts';
 
 export default function NewPage() {
 
