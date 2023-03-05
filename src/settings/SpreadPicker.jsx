@@ -3,9 +3,10 @@ import CardSpreadOptions from '../card_spread_options.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { getSpreadChoices } from './SettingsUtil.ts';
 
-export default function SpreadPicker({ spreadList, save, close }) {
-    const [chosenSpread, setChosenSpread] = useState(spreadList);
+export default function SpreadPicker({ close }) {
+    const [chosenSpread, setChosenSpread] = useState(getSpreadChoices);
     const [updated, setUpdated] = useState(false);
 
     function updateSpread(num, i) {
@@ -17,12 +18,17 @@ export default function SpreadPicker({ spreadList, save, close }) {
         }
     }
 
+    function onSave() {
+        localStorage.setItem('chosenSpreads', JSON.stringify(chosenSpread));
+        setUpdated(false);
+    }
+
     function OptionList({ number }) {
         return (
             <div className=''>
                 {
                     CardSpreadOptions[number].map((value, index) => (
-                        <div className='listRow'>
+                        <div className='listRow' key={value}>
                             <div className='check'>
                                 {
                                     (chosenSpread[number] === index) &&
@@ -64,7 +70,7 @@ export default function SpreadPicker({ spreadList, save, close }) {
             <div>
                 <button className={`action-button ${!updated ? 'inactive' : ''}`}
                     style={{ marginRight: 10 }}
-                    onClick={() => { save(chosenSpread) }}>
+                    onClick={() => { onSave(chosenSpread) }}>
                     <b>Save</b>
                 </button>
                 <button className='action-button'

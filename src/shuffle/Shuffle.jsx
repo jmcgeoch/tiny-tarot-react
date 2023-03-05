@@ -8,6 +8,7 @@ import TarotLibrary from '../tarot_library'
 import CardSpreadOptions from '../card_spread_options'
 import Dialog from '@mui/material/Dialog';
 import { useNavigate } from 'react-router-dom';
+import { getSpreadChoices } from '../settings/SettingsUtil.ts';
 
 export default function Shuffle() {
     const [numberOfCards, setNumberOfCards] = useState(3);
@@ -16,7 +17,7 @@ export default function Shuffle() {
     const [dialogVisible, setDialogVisible] = useState(false);
     const [frozen, setFrozen] = useState(false);
     const [spreadCategory, setSpreadCategory] = useState(CardSpreadOptions[numberOfCards - 1]);
-    const [selectedSpreads, setSelectedSpreads] = useState([0, 0, 0]);
+    const [selectedSpreads, setSelectedSpreads] = useState(getSpreadChoices);
     const navigate = useNavigate()
 
     let spreadOption = selectedSpreads[numberOfCards - 1];

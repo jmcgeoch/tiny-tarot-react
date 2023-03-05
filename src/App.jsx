@@ -3,7 +3,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { settings } from './resources/icons/iconIndex';
 import { useNavigate } from 'react-router-dom';
 
-
 function Header() {
   const navigate = useNavigate()
 
@@ -14,11 +13,10 @@ function Header() {
       <NavLink to='journal' className='navLink'>Journal</NavLink>
       <NavLink to='search' className='navLink'>Search</NavLink>
       <img src={settings}
-        className=''
+        className='settings-icon'
         onClick={() => {
-          navigate('settings', { state: { spreads: [0, 0, 0] } })
+          navigate('settings')
         }}
-        style={ { width: '35px', marginRight: '75px', marginTop: 'auto' } }
         alt='Settings'
         title='Settings'
       />

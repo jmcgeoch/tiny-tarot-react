@@ -3,7 +3,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Palette from '../resources/MuiPalette.tsx';
 import JournalSettings from './JournalSettings';
 import './Settings.css';
@@ -36,9 +36,7 @@ TabPanel.propTypes = {
 };
 
 export default function Settings() {
-    const { state } = useLocation();
     const navigate = useNavigate();
-    const selectedSpreads = state.spreads;
     const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
@@ -60,7 +58,7 @@ export default function Settings() {
                 </Tabs>
 
                 <TabPanel value={value} index={0}>
-                    <SpreadPicker spreadList={selectedSpreads} close={close} />
+                    <SpreadPicker close={close} />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     <JournalSettings />
