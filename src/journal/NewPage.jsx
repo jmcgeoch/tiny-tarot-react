@@ -2,9 +2,10 @@ import './NewPage.css';
 import Palette from '../resources/MuiPalette.tsx';
 import { ThemeProvider } from '@mui/material';
 import Card from '../cards/Card';
-import FreeSoloCreateOption from './ChipInput';
+import ChipInput from './ChipInput';
 import { useLocation, useNavigate } from "react-router-dom";
 import TextField from '@mui/material/TextField';
+import prettyDateTimeNow from './DateUtility.ts';
 
 export default function NewPage() {
 
@@ -14,19 +15,15 @@ export default function NewPage() {
     const journalSpread = state.spread;
     let jsonJournalEntry = {};
 
-    function prettyDateTime() {
-        const now = new Date();
-        const monthName = new Intl.DateTimeFormat("en-US", { month: 'long' }).format(now);
-        return (monthName + ' ' + now.getDate() + ' ' + now.getFullYear());
-    }
-
     function cancelNewPage() {
         navigate(-1);
     }
 
     return (
-        <div className='Journal-body'>
-            <div className='cards' style={{ maxHeight: 'none' }}>
+        <div className='App-body'>
+            <h1 style={{ marginTop: '20px' }}>New Journal Entry</h1>
+            <div className='infoRow'>
+            <div className='spreadContainer' style={{ maxHeight: 'none', width: 'max-content' }}>
                 {
                     journalCards.map((card, index) => (
                         <span className='entryCard' key={card.name}>
@@ -38,13 +35,17 @@ export default function NewPage() {
                     ))
                 }
             </div>
-            <div className='journalInfo'>
-                <p className='date'><b>{prettyDateTime()}</b></p>
+            <div className='journalInfo' style={{ justifyContent: 'space-evenly'}}>
+                <p className='date'><b>{prettyDateTimeNow()}</b></p>
                 <br />
                 <ThemeProvider theme={Palette} >
-                    <FreeSoloCreateOption />
-                    <TextField id="outlined-basic" variant="outlined"
-                        placeholder='Journal Entry' multiline={true} minRows={4} />
+                    <ChipInput />
+                    <br />
+                    <TextField id="outlined-basic"
+                        variant="outlined"
+                        placeholder='Journal Entry'
+                        multiline={true}
+                        minRows={5} />
                 </ThemeProvider>
                 <br />
                 <div className='infoRow'>
@@ -57,6 +58,7 @@ export default function NewPage() {
                         Cancel
                     </button>
                 </div>
+            </div>
             </div>
         </div>
     )

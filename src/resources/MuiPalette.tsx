@@ -7,6 +7,10 @@ const theme = createTheme({
       dark: '#e6e6fa',
     },
   },
+  spacing: 2,
+  typography: {
+    fontFamily: 'Verdana'
+  }
 });
 
 export default theme;

@@ -1,17 +1,14 @@
 import { useState } from 'react';
-import useAutocomplete from '@mui/base/useAutocomplete';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Chip from '@mui/material/Chip';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const filter = createFilterOptions({
     trim: true,
     ignoreCase: true
 });
 
-export default function FreeSoloCreateOption() {
+export default function ChipInput() {
     const [value, setValue] = useState([]);
     const [chipData, setChipData] = useState([]);
     
