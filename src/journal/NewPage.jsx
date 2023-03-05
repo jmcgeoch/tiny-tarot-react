@@ -13,7 +13,13 @@ export default function NewPage() {
     const navigate = useNavigate();
     const journalCards = state.cards;
     const journalSpread = state.spread;
-    let jsonJournalEntry = {};
+    let jsonJournalEntry = {
+        dateTime: '',
+        cards: [],
+        cardPositions: [],
+        tags: [],
+        userEntry: ''
+    };
 
     function cancelNewPage() {
         navigate(-1);

@@ -80,6 +80,13 @@ export default function Card({ cardProfile, flipped, style = 'brief', close }) {
                                         <p className='fact'>{cardProfile.numerology}</p>
                                     </>
                                 }
+                                {
+                                    (cardProfile.court) &&
+                                    <>
+                                        <h4>Court Card</h4>
+                                        <p className='fact'>{cardProfile.court}</p>
+                                    </>
+                                }
                             </div>
                         </div>
                         <div className='infoRow'>
