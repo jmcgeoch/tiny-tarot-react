@@ -11,9 +11,10 @@ export default function NewPage() {
 
     const { state } = useLocation();
     const navigate = useNavigate();
-    const journalCards = state.cards;
-    const journalSpread = state.spread;
+    const newEntryCards = state.cards;
+    const spreadPositions = state.spread;
     let jsonJournalEntry = {
+        id: null,
         dateTime: '',
         cards: [],
         cardPositions: [],
@@ -27,21 +28,21 @@ export default function NewPage() {
 
     return (
         <div className='App-body'>
-            <h1 style={{ marginTop: '20px' }}>New Journal Entry</h1>
+            <h1 className='new-entry-title'>New Journal Entry</h1>
             <div className='infoRow'>
-            <div className='spreadContainer' style={{ maxHeight: 'none', width: 'max-content' }}>
+            <div className='spreadContainer' >
                 {
-                    journalCards.map((card, index) => (
-                        <span className='entryCard' key={card.name}>
-                            <h1 className='positionName'>{journalSpread[index]}</h1>
+                    newEntryCards.map((card, index) => (
+                        <div className='new-entry cardContainer' key={card.name + index}>
+                            <h1 className='new-entry positionName'>{spreadPositions[index]}</h1>
                             <Card cardProfile={card}
                                 flipped={true}
-                                style={'image'} />
-                        </span>
+                                style={'keyword'} />
+                        </div>
                     ))
                 }
             </div>
-            <div className='journalInfo' style={{ justifyContent: 'space-evenly'}}>
+            <div className='journal-info' style={{ justifyContent: 'space-evenly'}}>
                 <p className='date'><b>{prettyDateTimeNow()}</b></p>
                 <br />
                 <ThemeProvider theme={Palette} >
@@ -50,9 +51,12 @@ export default function NewPage() {
                     <TextField id="outlined-basic"
                         variant="outlined"
                         placeholder='Journal Entry'
+                        fullWidth={true}
                         multiline={true}
-                        minRows={5} />
+                        minRows={5}
+                        maxRows={10} />
                 </ThemeProvider>
+                <br />
                 <br />
                 <div className='infoRow'>
                     <button className='action-button'

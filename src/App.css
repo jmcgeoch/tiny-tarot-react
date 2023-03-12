@@ -10,6 +10,7 @@
 p, li {
   font-family: 'Verdana', cursive;
   font-size: calc(1.8vmin);
+  overflow-wrap: break-word;
 }
 
 .headerNav {

@@ -68,7 +68,7 @@ export default function ChipInput() {
             renderOption={(props, option) => <div {...props}><p>{option.title}</p></div>}
             sx={{ width: '100%' }}
             freeSolo
-            limitTags={2}
+            limitTags={3}
             renderInput={(params) => (
                 <>
                     {chipData.map((option, index) => (

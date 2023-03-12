@@ -6,17 +6,17 @@ import { useState } from 'react';
 
 export default function Journal() {
     const [entries, setEntries] = useState(getEntries);
-    const [currentEntry, setCurrentEntry] = useState(null);
+    const [currentEntry, setCurrentEntry] = useState(entries[0]);
     const [loading, setLoading] = useState(false);
 
     function getEntries() {
 
-        //wrap in useEffect and add loading state + icon
+        //todo wrap in useEffect and add loading state + icon
         const fetchedEntries = localStorage.getItem('entries');
         if (fetchedEntries) {
             return fetchedEntries;
         } else {
-            return [];
+            return ExampleEntries;
         }
     }
 

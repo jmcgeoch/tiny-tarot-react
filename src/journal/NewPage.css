@@ -1,0 +1,12 @@
+.journal-info {
+    margin: 20px;
+    flex-grow: 1;
+}
+
+.new-entry.cardContainer, .new-entry.positionName {
+    margin-top: 0;
+}
+
+.new-entry-title {
+    margin: 20px 0 0 0;
+}

@@ -1,48 +1,55 @@
 [
   {
-    "dateTime": "Dec 17 1995",
+    "id": 12,
+    "dateTime": "1678038864319",
     "cards": [12, 45, 23],
     "cardPositions": ["Past", "Present", "Future"],
     "tags": ["Pisces", "3 Card", "New Moon", "bad day"],
     "userEntry": "Today I went to the supermarket and saw my favorite vegetable there and it reminded me of the small things in life. Feeling like the world is okay."
   },
   {
-    "dateTime": "Apr 7 1995",
+    "id": 11,
+    "dateTime": "1678038864319",
     "cards": [3],
     "cardPositions": ["General Advice"],
     "tags": ["1 Card", "New Moon"],
-    "userEntry": ""
+    "userEntry": "jhjkhjkhj hkjhkjhkjhkjhkhkj flkhdfjkhs ijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfieh jhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjh khkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjh kjhkjhkj hkjhkh kjflkhdfjkh sijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfj khsijf hkcmbnejh gueihrspbf iehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhs jfhkcm bnejhguei hrspbfiehjh jkhjkhjhk jhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfi ehjh jkhjkhj hkjhkjhkj hkjhkhkj flkhdfjk hsijfhkcmbnejhgueihrspbfiehjhjkhjkhjhkjhkjhkjhkjhkhkjflkhdfjkhsijfhkcmbnejhgueihrspbfiehjhjkhjkhj hkjh kj hkjh kjhkhkjflkhd fjkhsijfhkcmb nejhgueihrspbfieh"
   },
   {
-    "dateTime": "Nov 23 1994",
+    "id": 10,
+    "dateTime": "1678038864319",
     "cards": [33, 77],
     "cardPositions": ["Pros", "Cons"],
     "tags": ["2 Card", "New Moon"],
-    "userEntry": ""
+    "userEntry": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel consectetur urna. Nam convallis pharetra ultricies. Morbi in neque sit amet metus sagittis viverra. Suspendisse molestie odio eu nibh suscipit lacinia. In hac habitasse platea dictumst. Nulla sed luctus enim. Duis malesuada nunc vel sapien feugiat eleifend. Nunc mollis consequat nulla finibus euismod. Nam sagittis sodales libero vel semper. Etiam feugiat auctor magna, ac aliquam ante rhoncus ac. Etiam mattis in odio a viverra. Nullam finibus enim in felis imperdiet, vitae vulputate ante facilisis. Suspendisse finibus, augue sit amet vulputate porttitor, tellus neque pellentesque tellus, et ultricies mauris lacus in purus. Duis laoreet condimentum purus ultricies lacinia. Ut commodo feugiat imperdiet."
   },
   {
-    "dateTime": "Nov 6 1994",
+    "id": 9,
+    "dateTime": "1678038864319",
     "cards": [16, 55],
     "cardPositions": ["Pros", "Cons"],
     "tags": ["2 Card", "New Moon"],
     "userEntry": ""
   },
   {
-    "dateTime": "Oct 31 1994",
+    "id": 8,
+    "dateTime": "1678038864319",
     "cards": [66, 65],
     "cardPositions": ["Pros", "Cons"],
     "tags": ["2 Card", "New Moon"],
     "userEntry": ""
   },
   {
-    "dateTime": "Oct 13 1994",
+    "id": 7,
+    "dateTime": "1678038864319",
     "cards": [49, 36],
     "cardPositions": ["Pros", "Cons"],
     "tags": ["2 Card", "New Moon"],
     "userEntry": ""
   },
   {
-    "dateTime": "Sep 21 1994",
+    "id": 6,
+    "dateTime": "1678038864319",
     "cards": [8, 0],
     "cardPositions": ["Pros", "Cons"],
     "tags": ["2 Card", "New Moon"],

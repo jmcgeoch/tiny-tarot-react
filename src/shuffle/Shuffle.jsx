@@ -146,7 +146,7 @@ export default function Shuffle() {
                                 <span onClick={() => { updateFlip(index) }}>
                                     <Card cardProfile={card}
                                         flipped={isFlipped[index]}
-                                        style='brief' />
+                                        style='keyword' />
                                 </span>
                             </div>
                             :

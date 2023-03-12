@@ -1,8 +1,11 @@
 import './JournalPage.css';
 import Card from '../cards/Card';
-import Chips from './Chips';
+import Chip from '@mui/material/Chip';
+import { ThemeProvider } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import Palette from '../resources/MuiPalette.tsx'
 import TarotLibrary from '../tarot_library.json';
+import { parseEntryDate } from '../utilities/DateUtil.ts';
 
 function NoEntriesPage() {
     return (
@@ -35,29 +38,45 @@ export default function JournalPage({ entry }) {
                         {
                             entry.cards.map((card, index) => (
                                 <span className='entryCard' key={card.name + index}>
-                                    <h1 className='positionName'>{entry.cardPositions[index]}</h1>
+                                    <h2 className='positionName'>{entry.cardPositions[index]}</h2>
                                     <span onClick={() => { }}>
                                         <Card cardProfile={TarotLibrary[card]}
                                             flipped={true}
-                                            style={'brief'}
+                                            style={'keyword'}
                                         />
                                     </span>
                                 </span>
                             ))
                         }
                         <div className='journalInfo'>
-                            <p className='date'><b>{entry.dateTime}</b></p>
+                            <p className='date'><b>{parseEntryDate(entry.dateTime)}</b></p>
                             <br />
-                            {
-                                entry.tags &&
-                                <span className='chips'><Chips tags={entry.tags} /></span>
-                            }
+                            <span className='chips'>
+                                <ThemeProvider theme={Palette} >
+                                    {
+                                        entry.tags &&
+                                        entry.tags.map((tag, index) => (
+                                            <Chip label={tag}
+                                                sx={{
+                                                    marginRight: 1,
+                                                    marginBottom: 2,
+                                                    color: 'text.primary',
+                                                    bgcolor: 'white',
+                                                    border: 1,
+                                                    borderColor: 'primary.main'
+                                                }}
+                                                size={'small'} key={tag + index} />
+                                        ))
+
+                                    }
+                                </ThemeProvider>
+                            </span>
                             {
                                 entry.userEntry &&
-                                <p>{entry.userEntry}</p>
+                                <p style={{ height: '50%' }}>{entry.userEntry}</p>
                             }
                         </div>
-                        
+
                     </div>
 
                 </>
